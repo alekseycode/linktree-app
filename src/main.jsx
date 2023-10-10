@@ -4,6 +4,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./RootLayout.jsx";
 import Home from "./Home.jsx";
+import Links from "./Links.jsx";
+import Appearance from "./Appearance.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "links",
+        element: <Links />,
+      },
+      {
+        path: "appearance",
+        element: <Appearance />,
       },
     ],
   },

@@ -1,0 +1,16 @@
+.active {
+  font-weight: bolder;
+}
+
+a {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.hover:hover {
+  color: darkblue;
+}
+
+.hover {
+  transition: 0.3s;
+}
