@@ -7,12 +7,13 @@ const Nav = () => {
       justifyContent="space-between"
       mt="10px"
       bg="gray.700"
-      borderRadius="10px"
+      borderRadius="30px"
       mx="10px"
       py="20px"
       sx={{
         ".active": { fontWeight: "bolder" },
       }}
+      mb="10px"
     >
       <Box display="flex" ml="20px">
         <Box
@@ -20,13 +21,41 @@ const Nav = () => {
             color: "rgb(111, 111, 182)",
             transition: "color 0.2s ease-out",
           }}
-          pr="10px"
+          pr="30px"
         >
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
-            to="links"
+            to="preview/links"
           >
             Links
+          </NavLink>
+        </Box>
+        <Box
+          _hover={{
+            color: "rgb(111, 111, 182)",
+            transition: "color 0.2s ease-out",
+          }}
+          pr="30px"
+        >
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="preview/appearance"
+          >
+            Appearance
+          </NavLink>
+        </Box>
+        <Box
+          _hover={{
+            color: "rgb(111, 111, 182)",
+            transition: "color 0.2s ease-out",
+          }}
+          pr="30px"
+        >
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="analytics"
+          >
+            Analytics
           </NavLink>
         </Box>
         <Box
@@ -37,9 +66,9 @@ const Nav = () => {
         >
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
-            to="appearance"
+            to="settings"
           >
-            Appearance
+            Settings
           </NavLink>
         </Box>
       </Box>

@@ -7,6 +7,8 @@ import Home from "./Home.jsx";
 import Links from "./Links.jsx";
 import Appearance from "./Appearance.jsx";
 import Preview from "./Preview.jsx";
+import Analytics from "./Analytics.jsx";
+import Settings from "./Settings.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
             element: <Appearance />,
           },
         ],
+      },
+      {
+        path: "analytics",
+        element: <Analytics />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },
