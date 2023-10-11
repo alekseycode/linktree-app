@@ -11,9 +11,10 @@ const Nav = () => {
       mx="10px"
       py="20px"
       sx={{
-        ".active": { fontWeight: "bolder" },
+        ".active": { fontWeight: "bolder", color: "white" },
       }}
       mb="10px"
+      color="#c8c2c2"
     >
       <Box display="flex" ml="20px">
         <Box
@@ -63,6 +64,7 @@ const Nav = () => {
             color: "rgb(111, 111, 182)",
             transition: "color 0.2s ease-out",
           }}
+          pr="30px"
         >
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}

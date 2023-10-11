@@ -2,7 +2,7 @@ import { Button, Flex, Link, Text } from "@chakra-ui/react";
 
 const Links = () => {
   return (
-    <Flex flexDir="column" ml="20px" flexGrow="1" maxW="80%">
+    <Flex flexDir="column" ml="20px" flexGrow="1" maxW="90%">
       <Flex bg="#37374c82" p="10px" borderRadius="22px" mb="60px">
         <Text fontSize="1.25rem" mr="15px">
           ⓘ
