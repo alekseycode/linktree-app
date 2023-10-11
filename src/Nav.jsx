@@ -1,6 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { Link, NavLink } from "react-router-dom";
-import "./stylesheets/nav.css";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -10,20 +9,49 @@ const Nav = () => {
       bg="gray.700"
       borderRadius="10px"
       mx="10px"
-      pt="20px"
-      pb="20px"
-      mb="40px"
+      py="20px"
+      sx={{
+        ".active": { fontWeight: "bolder" },
+      }}
     >
-      <Box className="right-links" display="flex" ml="20px">
-        <Box pr="10px" className="hover">
-          <NavLink to="preview/links">Links</NavLink>
+      <Box display="flex" ml="20px">
+        <Box
+          _hover={{
+            color: "rgb(111, 111, 182)",
+            transition: "color 0.2s ease-out",
+          }}
+          pr="10px"
+        >
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="links"
+          >
+            Links
+          </NavLink>
         </Box>
-        <Box className="hover">
-          <NavLink to="preview/appearance">Appearance</NavLink>
+        <Box
+          _hover={{
+            color: "rgb(111, 111, 182)",
+            transition: "color 0.2s ease-out",
+          }}
+        >
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="appearance"
+          >
+            Appearance
+          </NavLink>
         </Box>
       </Box>
-      <Box className="left-links hover" mr="40px">
-        <Link>More</Link>
+      <Box
+        _hover={{
+          color: "rgb(111, 111, 182)",
+          transition: "color 0.2s ease-out",
+          cursor: "pointer",
+        }}
+        mr="20px"
+      >
+        <>More</>
       </Box>
     </Flex>
   );
