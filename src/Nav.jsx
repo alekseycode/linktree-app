@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./stylesheets/nav.css";
 
 const Nav = () => {
@@ -12,17 +12,18 @@ const Nav = () => {
       mx="10px"
       pt="20px"
       pb="20px"
+      mb="40px"
     >
       <Box className="right-links" display="flex" ml="20px">
         <Box pr="10px" className="hover">
-          <NavLink to="links">Links</NavLink>
+          <NavLink to="preview/links">Links</NavLink>
         </Box>
         <Box className="hover">
-          <NavLink to="appearance">Appearance</NavLink>
+          <NavLink to="preview/appearance">Appearance</NavLink>
         </Box>
       </Box>
-      <Box className="left-links hover" mr="20px">
-        <NavLink>More</NavLink>
+      <Box className="left-links hover" mr="40px">
+        <Link>More</Link>
       </Box>
     </Flex>
   );

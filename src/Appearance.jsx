@@ -1,5 +1,11 @@
+import { Flex, Text } from "@chakra-ui/react";
+
 const Appearance = () => {
-  return <div>Appearance</div>;
+  return (
+    <Flex>
+      <Text>Profile</Text>
+    </Flex>
+  );
 };
 
 export default Appearance;
