@@ -31,15 +31,15 @@ const router = createBrowserRouter([
             path: "appearance",
             element: <Appearance />,
           },
+          {
+            path: "settings",
+            element: <Settings />,
+          },
         ],
       },
       {
         path: "analytics",
         element: <Analytics />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
       },
     ],
   },

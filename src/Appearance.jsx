@@ -18,7 +18,7 @@ import ChevronDownIcon from "./icons/ChevronDownIcon";
 
 const Appearance = () => {
   return (
-    <Flex flexDir="column" ml="30px" flexGrow="1" maxW="80%">
+    <Flex flexDir="column" ml="30px" flexGrow="1">
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Profile
       </Text>

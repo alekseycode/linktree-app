@@ -15,6 +15,11 @@ const Nav = () => {
       }}
       mb="10px"
       color="#c8c2c2"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      zIndex="1"
     >
       <Box display="flex" ml="20px">
         <Box
@@ -68,7 +73,7 @@ const Nav = () => {
         >
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
-            to="settings"
+            to="preview/settings"
           >
             Settings
           </NavLink>
