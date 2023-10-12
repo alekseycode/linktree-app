@@ -80,7 +80,7 @@ const Appearance = () => {
               w="128px"
               border="dotted"
               borderRadius="10px"
-              _hover={{ cursor: "pointer" }}
+              cursor="pointer"
               textAlign="center"
               alignItems="center"
               fontSize="20px"
@@ -93,7 +93,7 @@ const Appearance = () => {
             <Text>Custom</Text>
           </Flex>
           <Flex flexDir="column" alignItems="center">
-            <Flex h="200px" w="128px" mb="10px" _hover={{ cursor: "pointer" }}>
+            <Flex h="200px" w="128px" mb="10px" cursor="pointer">
               <Image
                 borderRadius="10px"
                 src="https://mfe-appearance.production.linktr.ee/images/selector-olivia-rodrigo-guts.bce5704bb397972aa4c6.webp"
@@ -104,7 +104,7 @@ const Appearance = () => {
             </Text>
           </Flex>
           <Flex flexDir="column" alignItems="center">
-            <Flex h="200px" w="128px" mb="10px" _hover={{ cursor: "pointer" }}>
+            <Flex h="200px" w="128px" mb="10px" cursor="pointer">
               <Image
                 borderRadius="10px"
                 src="https://mfe-appearance.production.linktr.ee/images/selector-olivia-rodrigo-guts-v2.48846b855e65ab113f62.webp"
@@ -115,7 +115,7 @@ const Appearance = () => {
             </Text>
           </Flex>
           <Flex flexDir="column" alignItems="center">
-            <Flex h="200px" w="128px" mb="10px" _hover={{ cursor: "pointer" }}>
+            <Flex h="200px" w="128px" mb="10px" cursor="pointer">
               <Image
                 borderRadius="10px"
                 src="https://mfe-appearance.production.linktr.ee/images/selector-pebble-blue.48047a34097e85836255.png"
@@ -146,7 +146,7 @@ const Appearance = () => {
               w="128px"
               mb="10px"
               borderRadius="10px"
-              _hover={{ cursor: "pointer" }}
+              cursor="pointer"
               bg="gray.400"
             ></Flex>
             <Text>Flat Color</Text>
@@ -158,7 +158,7 @@ const Appearance = () => {
               mb="10px"
               borderRadius="10px"
               border="solid"
-              _hover={{ cursor: "pointer" }}
+              cursor="pointer"
             ></Flex>
             <Text w="128px" textAlign="center">
               Gradient
@@ -171,7 +171,7 @@ const Appearance = () => {
               mb="10px"
               borderRadius="10px"
               border="dotted"
-              _hover={{ cursor: "pointer" }}
+              cursor="pointer"
             ></Flex>
             <Text w="128px" textAlign="center">
               Image
@@ -184,7 +184,7 @@ const Appearance = () => {
               mb="10px"
               borderRadius="10px"
               border="dotted"
-              _hover={{ cursor: "pointer" }}
+              cursor="pointer"
             ></Flex>
             <Text w="128px" textAlign="center">
               Video
@@ -201,7 +201,7 @@ const Appearance = () => {
             bg="purple"
             borderRadius="10px"
             mr="20px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Input placeholder="Color" w="200px" height="50px" />
         </Flex>
@@ -214,25 +214,20 @@ const Appearance = () => {
           Fill
         </Text>
         <Flex justifyContent="space-around">
-          <Box
-            bg="white"
-            w="180px"
-            h="35px"
-            _hover={{ cursor: "pointer" }}
-          ></Box>
+          <Box bg="white" w="180px" h="35px" cursor="pointer"></Box>
           <Box
             bg="white"
             w="180px"
             h="35px"
             borderRadius="10px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             bg="white"
             w="180px"
             h="35px"
             borderRadius="30px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
         </Flex>
         <Text ml="18px" mt="28px" mb="18px">
@@ -244,7 +239,7 @@ const Appearance = () => {
             w="180px"
             h="35px"
             border="solid white"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             bg="gray.700"
@@ -252,7 +247,7 @@ const Appearance = () => {
             h="35px"
             border="solid white"
             borderRadius="10px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             bg="gray.700"
@@ -260,7 +255,7 @@ const Appearance = () => {
             h="35px"
             border="solid white"
             borderRadius="30px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
         </Flex>
         <Text ml="18px" mt="28px" mb="18px">
@@ -272,7 +267,7 @@ const Appearance = () => {
             bg="gray.700"
             w="180px"
             h="35px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             boxShadow="0px 5px 4px lightgray"
@@ -280,7 +275,7 @@ const Appearance = () => {
             w="180px"
             h="35px"
             borderRadius="10px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             boxShadow="0px 5px 5px lightgray"
@@ -288,7 +283,7 @@ const Appearance = () => {
             w="180px"
             h="35px"
             borderRadius="30px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
         </Flex>
         <Text ml="18px" mt="28px" mb="18px">
@@ -300,7 +295,7 @@ const Appearance = () => {
             bg="gray.700"
             w="180px"
             h="35px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             boxShadow="5px 5px 2px lightgray"
@@ -308,7 +303,7 @@ const Appearance = () => {
             w="180px"
             h="35px"
             borderRadius="10px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Box
             boxShadow="5px 5px 2px lightgray"
@@ -316,7 +311,7 @@ const Appearance = () => {
             w="180px"
             h="35px"
             borderRadius="30px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
         </Flex>
         <Text ml="18px" fontWeight="600" mb="10px">
@@ -329,7 +324,7 @@ const Appearance = () => {
             bg="purple"
             borderRadius="10px"
             mr="20px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Input placeholder="Button color" w="200px" height="50px" />
         </Flex>
@@ -343,7 +338,7 @@ const Appearance = () => {
             bg="white"
             borderRadius="10px"
             mr="20px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Input placeholder="Button font color" w="200px" height="50px" />
         </Flex>
@@ -357,7 +352,7 @@ const Appearance = () => {
             bg="gray"
             borderRadius="10px"
             mr="20px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Input placeholder="Shadow color" w="200px" height="50px" />
         </Flex>
@@ -405,7 +400,7 @@ const Appearance = () => {
             bg="white"
             borderRadius="10px"
             mr="20px"
-            _hover={{ cursor: "pointer" }}
+            cursor="pointer"
           ></Box>
           <Input placeholder="Color" w="200px" height="50px" />
         </Flex>
