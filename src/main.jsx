@@ -6,6 +6,9 @@ import RootLayout from "./RootLayout.jsx";
 import Home from "./Home.jsx";
 import Links from "./Links.jsx";
 import Appearance from "./Appearance.jsx";
+import Preview from "./Preview.jsx";
+import Analytics from "./Analytics.jsx";
+import Settings from "./Settings.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +20,26 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "links",
-        element: <Links />,
+        path: "preview",
+        element: <Preview />,
+        children: [
+          {
+            path: "links",
+            element: <Links />,
+          },
+          {
+            path: "appearance",
+            element: <Appearance />,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
+          },
+        ],
       },
       {
-        path: "appearance",
-        element: <Appearance />,
+        path: "analytics",
+        element: <Analytics />,
       },
     ],
   },

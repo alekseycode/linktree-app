@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import NavItem from "./NavItem";
 
 const Nav = () => {
   return (
@@ -7,45 +7,29 @@ const Nav = () => {
       justifyContent="space-between"
       mt="10px"
       bg="gray.700"
-      borderRadius="10px"
+      borderRadius="30px"
       mx="10px"
       py="20px"
       sx={{
-        ".active": { fontWeight: "bolder" },
+        ".active": { fontWeight: "bolder", color: "white" },
       }}
+      mb="10px"
+      color="#c8c2c2"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      zIndex="1"
     >
       <Box display="flex" ml="20px">
-        <Box
-          _hover={{
-            color: "lightblue",
-            transition: "color 0.2s ease-out",
-          }}
-          pr="10px"
-        >
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="links"
-          >
-            Links
-          </NavLink>
-        </Box>
-        <Box
-          _hover={{
-            color: "lightblue",
-            transition: "color 0.2s ease-out",
-          }}
-        >
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="appearance"
-          >
-            Appearance
-          </NavLink>
-        </Box>
+        <NavItem to="preview/links" label="Links" />
+        <NavItem to="preview/appearance" label="Appearance" />
+        <NavItem to="analytics" label="Analytics" />
+        <NavItem to="preview/settings" label="Settings" />
       </Box>
       <Box
         _hover={{
-          color: "lightblue",
+          color: "rgb(111, 111, 182)",
           transition: "color 0.2s ease-out",
           cursor: "pointer",
         }}
