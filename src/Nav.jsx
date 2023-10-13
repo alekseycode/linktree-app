@@ -11,9 +11,15 @@ const Nav = () => {
       mx="10px"
       py="20px"
       sx={{
-        ".active": { fontWeight: "bolder" },
+        ".active": { fontWeight: "bolder", color: "white" },
       }}
       mb="10px"
+      color="#c8c2c2"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      zIndex="1"
     >
       <Box display="flex" ml="20px">
         <NavItem to="preview/links" label="Links" />
