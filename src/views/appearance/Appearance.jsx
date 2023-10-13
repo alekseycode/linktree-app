@@ -14,7 +14,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import ChevronDownIcon from "./icons/ChevronDownIcon";
+import ChevronDownIcon from "../../icons/ChevronDownIcon";
 
 const Appearance = () => {
   return (

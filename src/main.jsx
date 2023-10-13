@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./RootLayout.jsx";
-import Home from "./Home.jsx";
-import Links from "./Links.jsx";
-import Appearance from "./Appearance.jsx";
-import Preview from "./Preview.jsx";
-import Analytics from "./Analytics.jsx";
-import Settings from "./Settings.jsx";
+import Home from "./views/user-page/Home.jsx";
+import Preview from "./components/preview/Preview.jsx";
+import Links from "./views/links/Links.jsx";
+import Appearance from "./views/appearance/Appearance.jsx";
+import Settings from "./views/settings/Settings.jsx";
+import Analytics from "./views/analytics/Analytics.jsx";
 
 const router = createBrowserRouter([
   {
