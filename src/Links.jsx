@@ -11,18 +11,22 @@ const Links = () => {
           <span>
             <strong>Your Linktree is live: </strong>
 
-            <Link href="https://linktr.ee/losh_cherns" textDecor="underline">
+            <Link
+              isExternal
+              href="https://linktr.ee/losh_cherns"
+              textDecor="underline"
+            >
               linktr.ee/losh_cherns
             </Link>
           </span>
           <Text>Share your Linktree to your socials</Text>
         </Text>
-        <Button borderRadius="30px" alignSelf="center" pt="22px" pb="22px">
+        <Button borderRadius="30px" alignSelf="center" py="22px">
           Copy URL
         </Button>
       </Flex>
 
-      <Button borderRadius="30px" mb="40px" pt="25px" pb="25px">
+      <Button borderRadius="30px" mb="40px" py="25px">
         + Add Link
       </Button>
 

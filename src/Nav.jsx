@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import NavItem from "./NavItem";
 
 const Nav = () => {
   return (
@@ -16,61 +16,10 @@ const Nav = () => {
       mb="10px"
     >
       <Box display="flex" ml="20px">
-        <Box
-          _hover={{
-            color: "rgb(111, 111, 182)",
-            transition: "color 0.2s ease-out",
-          }}
-          pr="30px"
-        >
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="preview/links"
-          >
-            Links
-          </NavLink>
-        </Box>
-        <Box
-          _hover={{
-            color: "rgb(111, 111, 182)",
-            transition: "color 0.2s ease-out",
-          }}
-          pr="30px"
-        >
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="preview/appearance"
-          >
-            Appearance
-          </NavLink>
-        </Box>
-        <Box
-          _hover={{
-            color: "rgb(111, 111, 182)",
-            transition: "color 0.2s ease-out",
-          }}
-          pr="30px"
-        >
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="analytics"
-          >
-            Analytics
-          </NavLink>
-        </Box>
-        <Box
-          _hover={{
-            color: "rgb(111, 111, 182)",
-            transition: "color 0.2s ease-out",
-          }}
-        >
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="settings"
-          >
-            Settings
-          </NavLink>
-        </Box>
+        <NavItem to="preview/links" label="Links" />
+        <NavItem to="preview/appearance" label="Appearance" />
+        <NavItem to="analytics" label="Analytics" />
+        <NavItem to="preview/settings" label="Settings" />
       </Box>
       <Box
         _hover={{
