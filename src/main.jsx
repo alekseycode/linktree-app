@@ -9,6 +9,7 @@ import Links from "./views/links/Links.jsx";
 import Appearance from "./views/appearance/Appearance.jsx";
 import Settings from "./views/settings/Settings.jsx";
 import Analytics from "./views/analytics/Analytics.jsx";
+import theme from "./theme.js";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>
