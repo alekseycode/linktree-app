@@ -1,6 +1,9 @@
 import { Button, Flex, Link, Text } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Links = () => {
+  const [showAddLink, setShowAddLink] = useState(true);
+
   return (
     <Flex flexDir="column" ml="20px" flexGrow="1">
       <Flex bg="#37374c82" p="10px" borderRadius="22px" mb="60px">
@@ -26,9 +29,21 @@ const Links = () => {
         </Button>
       </Flex>
 
-      <Button borderRadius="30px" mb="40px" py="25px">
-        + Add Link
-      </Button>
+      {showAddLink ? (
+        <Button
+          onClick={() => setShowAddLink(false)}
+          borderRadius="30px"
+          mb="40px"
+          py="25px"
+        >
+          + Add Link
+        </Button>
+      ) : (
+        <Flex>
+          <Text>Enter URL</Text>
+          <Button onClick={() => setShowAddLink(true)}>X</Button>
+        </Flex>
+      )}
 
       <Button
         maxW="100px"
