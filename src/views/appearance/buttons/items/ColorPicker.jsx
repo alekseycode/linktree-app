@@ -10,19 +10,7 @@ import {
 import { useState } from "react";
 import { ChromePicker } from "react-color";
 
-const ColorPicker = ({ heading }) => {
-  const [chosenColor, setChosenColor] = useState("white");
-
-  const handleChromePicker = (color) => {
-    setChosenColor(color.hex);
-  };
-
-  const handleColorInput = (e) => {
-    if (e.key === "Enter") {
-      setChosenColor(e.target.value);
-    }
-  };
-
+const ColorPicker = ({ heading, background, onChange, onKeyDown }) => {
   return (
     <>
       <Text ml="18px" fontWeight="600" mb="10px">
@@ -35,7 +23,7 @@ const ColorPicker = ({ heading }) => {
             <Box
               h="50px"
               w="50px"
-              bg={chosenColor}
+              bg={background}
               borderRadius="10px"
               mr="20px"
               cursor="pointer"
@@ -43,7 +31,7 @@ const ColorPicker = ({ heading }) => {
           </PopoverTrigger>
           <PopoverContent w="90%" ml="34%">
             <Flex justifyContent="center">
-              <ChromePicker onChange={handleChromePicker} color={chosenColor} />
+              <ChromePicker onChange={onChange} color={background} />
             </Flex>
           </PopoverContent>
         </Popover>
@@ -51,7 +39,7 @@ const ColorPicker = ({ heading }) => {
         <Input
           placeholder={heading}
           w="30%"
-          onKeyDown={handleColorInput}
+          onKeyDown={onKeyDown}
           defaultValue="#"
         />
       </Flex>

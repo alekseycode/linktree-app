@@ -17,7 +17,13 @@ import {
 } from "@chakra-ui/react";
 import ChevronDownIcon from "../../icons/ChevronDownIcon";
 
-import { SHAPE_SQUARE, BG_NONE } from "../../constants";
+import {
+  SHAPE_SQUARE,
+  BG_NONE,
+  BUTTON_COLOR,
+  FONT_COLOR,
+  SHADOW_COLOR,
+} from "../../constants";
 import ButtonStyles from "./buttons/ButtonStyles";
 import ButtonColors from "./buttons/ButtonColors";
 
@@ -26,6 +32,9 @@ const Appearance = () => {
     shape: SHAPE_SQUARE,
     bg: BG_NONE,
     shadow: null,
+    buttonColor: BUTTON_COLOR,
+    fontColor: FONT_COLOR,
+    shadowColor: SHADOW_COLOR,
   });
 
   const updateStyle = (prop, value) => {
@@ -231,11 +240,13 @@ const Appearance = () => {
 
       <Flex flexDir="column" bg="gray.700" borderRadius="30px" px="28px">
         <ButtonStyles styles={styles} updateStyle={updateStyle} />
-        <ButtonColors />
+        <ButtonColors styles={styles} updateStyle={updateStyle} />
       </Flex>
+
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Fonts
       </Text>
+
       <Flex
         flexDir="column"
         bg="gray.700"
