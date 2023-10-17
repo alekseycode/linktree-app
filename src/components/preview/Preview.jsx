@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const Preview = () => {
   return (
     <Flex mt="5%">
-      <Flex flexGrow="1" maxWidth="55%">
+      <Flex flexGrow="1" maxWidth="55%" mt="2%" justifyContent="center">
         <Outlet />
       </Flex>
       <Flex flexGrow="1" justifyContent="center" mt="12%">
@@ -14,6 +14,7 @@ const Preview = () => {
           borderRadius="20px"
           w="18%"
           h="50%"
+          maxW="300px"
           position="fixed"
           flexDirection="column"
           justifyContent="space-between"

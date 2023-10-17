@@ -7,10 +7,15 @@ import {
   PopoverTrigger,
   Text,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { ChromePicker } from "react-color";
 
-const ColorPicker = ({ heading, background, onChange, onKeyDown }) => {
+const ColorPicker = ({
+  heading,
+  background,
+  onChange,
+  onKeyDown,
+  inputVal,
+}) => {
   return (
     <>
       <Text ml="18px" fontWeight="600" mb="10px">
@@ -36,12 +41,7 @@ const ColorPicker = ({ heading, background, onChange, onKeyDown }) => {
           </PopoverContent>
         </Popover>
 
-        <Input
-          placeholder={heading}
-          w="30%"
-          onKeyDown={onKeyDown}
-          defaultValue="#"
-        />
+        <Input placeholder={inputVal} w="30%" onKeyDown={onKeyDown} />
       </Flex>
     </>
   );

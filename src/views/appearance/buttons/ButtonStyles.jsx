@@ -18,7 +18,7 @@ const borderRadiusVariants = {
 
 const ButtonStyles = ({ styles, updateStyle }) => {
   const borderRadius = borderRadiusVariants[styles.shape];
-  const background = styles.bg === BG_FILL ? "white" : "";
+  const background = styles.variant === BG_FILL ? styles.buttonColor : "";
   return (
     <>
       <Text ml="18px" my="28px">
@@ -26,19 +26,19 @@ const ButtonStyles = ({ styles, updateStyle }) => {
       </Text>
       <Flex>
         <ButtonItem
-          background="gray.700"
+          background={"gray.700"}
           borderRadius={borderRadiusVariants[SHAPE_SQUARE]}
           onClick={() => updateStyle("shape", SHAPE_SQUARE)}
           isActive={styles.shape === SHAPE_SQUARE}
         />
         <ButtonItem
-          background="gray.700"
+          background={"gray.700"}
           borderRadius={borderRadiusVariants[SHAPE_ROUNDED]}
           onClick={() => updateStyle("shape", SHAPE_ROUNDED)}
           isActive={styles.shape === SHAPE_ROUNDED}
         />
         <ButtonItem
-          background="gray.700"
+          background={"gray.700"}
           borderRadius={borderRadiusVariants[SHAPE_CIRCLE]}
           onClick={() => updateStyle("shape", SHAPE_CIRCLE)}
           isActive={styles.shape === SHAPE_CIRCLE}
@@ -49,14 +49,14 @@ const ButtonStyles = ({ styles, updateStyle }) => {
       </Text>
       <Flex>
         <ButtonItem
-          onClick={() => updateStyle("bg", BG_NONE)}
-          isActive={styles.bg === BG_NONE}
+          onClick={() => updateStyle("variant", BG_NONE)}
+          isActive={styles.variant === BG_NONE}
           borderRadius={borderRadius}
         />
         <ButtonItem
-          background="white"
-          onClick={() => updateStyle("bg", BG_FILL)}
-          isActive={styles.bg === BG_FILL}
+          background={styles.buttonColor}
+          onClick={() => updateStyle("variant", BG_FILL)}
+          isActive={styles.variant === BG_FILL}
           borderRadius={borderRadius}
         />
       </Flex>
@@ -75,14 +75,14 @@ const ButtonStyles = ({ styles, updateStyle }) => {
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_SOFT}
           background={background}
-          boxShadow="0px 4px 4px lightgray"
+          boxShadow={"0px 4px 4px " + styles.shadowColor}
         />
         <ButtonItem
           onClick={() => updateStyle("shadow", SHADOW_HARD)}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_HARD}
           background={background}
-          boxShadow="5px 5px 2px lightgray"
+          boxShadow={"0px 4px 4px " + styles.shadowColor}
         />
       </Flex>
     </>

@@ -1,3 +1,5 @@
+export const BG_COLOR = "#BDBDBD";
+
 export const SHAPE_SQUARE = "square";
 export const SHAPE_ROUNDED = "rounded";
 export const SHAPE_CIRCLE = "circle";

@@ -5,8 +5,6 @@ const ButtonColors = ({ styles, updateStyle }) => {
   return (
     <>
       <ColorPicker
-        styles={styles}
-        updateStyle={updateStyle}
         heading="Button color"
         background={styles.buttonColor}
         onChange={(color) => updateStyle("buttonColor", color.hex)}
@@ -16,10 +14,9 @@ const ButtonColors = ({ styles, updateStyle }) => {
             updateStyle("buttonColor", val !== "#" ? val : styles.buttonColor);
           }
         }}
+        inputVal={styles.buttonColor}
       />
       <ColorPicker
-        styles={styles}
-        updateStyle={updateStyle}
         heading="Button font color"
         background={styles.fontColor}
         onChange={(color) => updateStyle("fontColor", color.hex)}
@@ -29,10 +26,9 @@ const ButtonColors = ({ styles, updateStyle }) => {
             updateStyle("fontColor", val !== "#" ? val : styles.fontColor);
           }
         }}
+        inputVal={styles.fontColor}
       />
       <ColorPicker
-        styles={styles}
-        updateStyle={updateStyle}
         heading="Shadow color"
         background={styles.shadowColor}
         onChange={(color) => updateStyle("shadowColor", color.hex)}
@@ -42,6 +38,7 @@ const ButtonColors = ({ styles, updateStyle }) => {
             updateStyle("shadowColor", val !== "#" ? val : styles.shadowColor);
           }
         }}
+        inputVal={styles.shadowColor}
       />
     </>
   );

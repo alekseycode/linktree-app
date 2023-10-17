@@ -23,18 +23,21 @@ import {
   BUTTON_COLOR,
   FONT_COLOR,
   SHADOW_COLOR,
+  BG_COLOR,
 } from "../../constants";
 import ButtonStyles from "./buttons/ButtonStyles";
 import ButtonColors from "./buttons/ButtonColors";
+import Backgrounds from "./backgrounds/Backgrounds";
 
 const Appearance = () => {
   const [styles, setStyles] = useState({
     shape: SHAPE_SQUARE,
-    bg: BG_NONE,
+    variant: BG_NONE,
     shadow: null,
     buttonColor: BUTTON_COLOR,
     fontColor: FONT_COLOR,
     shadowColor: SHADOW_COLOR,
+    bgColor: BG_COLOR,
   });
 
   const updateStyle = (prop, value) => {
@@ -45,7 +48,7 @@ const Appearance = () => {
   };
 
   return (
-    <Flex flexDir="column" ml="30px" flexGrow="1">
+    <Flex flexDir="column" ml="30px" flexGrow="1" maxW="70%">
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Profile
       </Text>
@@ -162,82 +165,15 @@ const Appearance = () => {
         colors, gradients and images. Choose a button style, change the typeface
         and more.
       </Text>
+
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Backgrounds
       </Text>
-      <Flex flexDir="column" bg="gray.700" borderRadius="30px">
-        <Flex my="28px" mx="16px" justifyContent="space-evenly">
-          <Flex flexDir="column" alignItems="center">
-            <Flex
-              h="200px"
-              w="128px"
-              mb="10px"
-              borderRadius="10px"
-              cursor="pointer"
-              bg="gray.400"
-            ></Flex>
-            <Text>Flat Color</Text>
-          </Flex>
-          <Flex flexDir="column" alignItems="center">
-            <Flex
-              h="200px"
-              w="128px"
-              mb="10px"
-              borderRadius="10px"
-              border="solid"
-              cursor="pointer"
-            ></Flex>
-            <Text w="128px" textAlign="center">
-              Gradient
-            </Text>
-          </Flex>
-          <Flex flexDir="column" alignItems="center">
-            <Flex
-              h="200px"
-              w="128px"
-              mb="10px"
-              borderRadius="10px"
-              border="dotted"
-              cursor="pointer"
-            ></Flex>
-            <Text w="128px" textAlign="center">
-              Image
-            </Text>
-          </Flex>
-          <Flex flexDir="column" alignItems="center">
-            <Flex
-              h="200px"
-              w="128px"
-              mb="10px"
-              borderRadius="10px"
-              border="dotted"
-              cursor="pointer"
-            ></Flex>
-            <Text w="128px" textAlign="center">
-              Video
-            </Text>
-          </Flex>
-        </Flex>
-        <Text ml="48px" fontWeight="600" mb="10px">
-          Color
-        </Text>
-        <Flex ml="48px" mb="28px">
-          <Box
-            h="50px"
-            w="50px"
-            bg="purple"
-            borderRadius="10px"
-            mr="20px"
-            cursor="pointer"
-          ></Box>
-          <Input placeholder="Color" w="200px" height="50px" />
-        </Flex>
-      </Flex>
+      <Backgrounds styles={styles} updateStyle={updateStyle} />
 
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Buttons
       </Text>
-
       <Flex flexDir="column" bg="gray.700" borderRadius="30px" px="28px">
         <ButtonStyles styles={styles} updateStyle={updateStyle} />
         <ButtonColors styles={styles} updateStyle={updateStyle} />
@@ -246,7 +182,6 @@ const Appearance = () => {
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Fonts
       </Text>
-
       <Flex
         flexDir="column"
         bg="gray.700"
