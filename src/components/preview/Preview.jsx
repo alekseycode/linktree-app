@@ -1,4 +1,5 @@
 import { Avatar, Flex, Image, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const Preview = () => {
