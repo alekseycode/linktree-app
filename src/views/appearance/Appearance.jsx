@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Avatar,
   Box,
@@ -16,7 +17,24 @@ import {
 } from "@chakra-ui/react";
 import ChevronDownIcon from "../../icons/ChevronDownIcon";
 
+import { SHAPE_SQUARE, BG_NONE } from "../../constants";
+import ButtonStyles from "./buttons/ButtonStyles";
+import ButtonColors from "./buttons/ButtonColors";
+
 const Appearance = () => {
+  const [styles, setStyles] = useState({
+    shape: SHAPE_SQUARE,
+    bg: BG_NONE,
+    shadow: null,
+  });
+
+  const updateStyle = (prop, value) => {
+    setStyles((prev) => ({
+      ...prev,
+      [prop]: value,
+    }));
+  };
+
   return (
     <Flex flexDir="column" ml="30px" flexGrow="1">
       <Text mt="48px" mb="16px" fontSize="1.4rem">
@@ -206,156 +224,14 @@ const Appearance = () => {
           <Input placeholder="Color" w="200px" height="50px" />
         </Flex>
       </Flex>
+
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Buttons
       </Text>
+
       <Flex flexDir="column" bg="gray.700" borderRadius="30px" px="28px">
-        <Text ml="18px" mt="28px" mb="18px">
-          Fill
-        </Text>
-        <Flex justifyContent="space-around">
-          <Box bg="white" w="180px" h="35px" cursor="pointer"></Box>
-          <Box
-            bg="white"
-            w="180px"
-            h="35px"
-            borderRadius="10px"
-            cursor="pointer"
-          ></Box>
-          <Box
-            bg="white"
-            w="180px"
-            h="35px"
-            borderRadius="30px"
-            cursor="pointer"
-          ></Box>
-        </Flex>
-        <Text ml="18px" mt="28px" mb="18px">
-          Outline
-        </Text>
-        <Flex justifyContent="space-around">
-          <Box
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            border="solid white"
-            cursor="pointer"
-          ></Box>
-          <Box
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            border="solid white"
-            borderRadius="10px"
-            cursor="pointer"
-          ></Box>
-          <Box
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            border="solid white"
-            borderRadius="30px"
-            cursor="pointer"
-          ></Box>
-        </Flex>
-        <Text ml="18px" mt="28px" mb="18px">
-          Soft Shadow
-        </Text>
-        <Flex justifyContent="space-around" mb="28px">
-          <Box
-            boxShadow="0px 4px 4px lightgray"
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            cursor="pointer"
-          ></Box>
-          <Box
-            boxShadow="0px 5px 4px lightgray"
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            borderRadius="10px"
-            cursor="pointer"
-          ></Box>
-          <Box
-            boxShadow="0px 5px 5px lightgray"
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            borderRadius="30px"
-            cursor="pointer"
-          ></Box>
-        </Flex>
-        <Text ml="18px" mt="28px" mb="18px">
-          Hard Shadow
-        </Text>
-        <Flex justifyContent="space-around" mb="28px">
-          <Box
-            boxShadow="5px 5px 2px lightgray"
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            cursor="pointer"
-          ></Box>
-          <Box
-            boxShadow="5px 5px 2px lightgray"
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            borderRadius="10px"
-            cursor="pointer"
-          ></Box>
-          <Box
-            boxShadow="5px 5px 2px lightgray"
-            bg="gray.700"
-            w="180px"
-            h="35px"
-            borderRadius="30px"
-            cursor="pointer"
-          ></Box>
-        </Flex>
-        <Text ml="18px" fontWeight="600" mb="10px">
-          Button color
-        </Text>
-        <Flex ml="18px" mb="28px">
-          <Box
-            h="50px"
-            w="50px"
-            bg="purple"
-            borderRadius="10px"
-            mr="20px"
-            cursor="pointer"
-          ></Box>
-          <Input placeholder="Button color" w="200px" height="50px" />
-        </Flex>
-        <Text ml="18px" fontWeight="600" mb="10px">
-          Button font color
-        </Text>
-        <Flex ml="18px" mb="28px">
-          <Box
-            h="50px"
-            w="50px"
-            bg="white"
-            borderRadius="10px"
-            mr="20px"
-            cursor="pointer"
-          ></Box>
-          <Input placeholder="Button font color" w="200px" height="50px" />
-        </Flex>
-        <Text ml="18px" fontWeight="600" mb="10px">
-          Shadow color
-        </Text>
-        <Flex ml="18px" mb="28px">
-          <Box
-            h="50px"
-            w="50px"
-            bg="gray"
-            borderRadius="10px"
-            mr="20px"
-            cursor="pointer"
-          ></Box>
-          <Input placeholder="Shadow color" w="200px" height="50px" />
-        </Flex>
+        <ButtonStyles styles={styles} updateStyle={updateStyle} />
+        <ButtonColors />
       </Flex>
       <Text mt="48px" mb="16px" fontSize="1.4rem">
         Fonts

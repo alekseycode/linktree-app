@@ -3,16 +3,16 @@ import { Outlet } from "react-router-dom";
 
 const Preview = () => {
   return (
-    <Flex mt="90px">
+    <Flex mt="5%">
       <Flex flexGrow="1" maxWidth="55%">
         <Outlet />
       </Flex>
-      <Flex flexGrow="1" justifyContent="center" mt="5%">
+      <Flex flexGrow="1" justifyContent="center" mt="12%">
         <Flex
           border="solid"
           borderRadius="20px"
-          w="175px"
-          h="350px"
+          w="18%"
+          h="50%"
           position="fixed"
           flexDirection="column"
           justifyContent="space-between"
@@ -21,20 +21,21 @@ const Preview = () => {
             <Avatar
               name="Rob Banks"
               src="https://bit.ly/dan-abramov"
-              mt="30px"
-              mb="10px"
+              mt="20%"
+              mb="5%"
               mx="auto"
+              w="35%"
+              h="50%"
             />
-            <Text mx="auto" fontSize="0.75rem">
+            <Text mx="auto" fontSize="1.2rem">
               @rob_banks
             </Text>
           </Flex>
           <Image
-            w="60px"
-            h="30px"
+            w="30%"
             src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
             mx="auto"
-            mb="5px"
+            mb="15%"
           />
         </Flex>
       </Flex>
