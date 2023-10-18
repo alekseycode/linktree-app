@@ -1,4 +1,4 @@
-import { Button, Flex, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Links = () => {
@@ -10,10 +10,9 @@ const Links = () => {
         <Text fontSize="1.25rem" mr="15px">
           ⓘ
         </Text>
-        <Text fontSize="0.9rem" flexGrow="1" flexDir="column">
-          <span>
-            <strong>Your Linktree is live: </strong>
-
+        <Box fontSize="0.9rem" flexGrow="1" flexDir="column">
+          <Box>
+            <strong> Your Linktree is live: </strong>
             <Link
               isExternal
               href="https://linktr.ee/losh_cherns"
@@ -21,9 +20,9 @@ const Links = () => {
             >
               linktr.ee/losh_cherns
             </Link>
-          </span>
+          </Box>
           <Text>Share your Linktree to your socials</Text>
-        </Text>
+        </Box>
         <Button borderRadius="30px" alignSelf="center" py="22px">
           Copy URL
         </Button>
