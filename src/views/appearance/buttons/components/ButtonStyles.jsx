@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import ButtonItem from "./items/ButtonItem";
+import ButtonItem from "../items/ButtonItem";
 import {
   BG_FILL,
   BG_NONE,
@@ -8,7 +8,7 @@ import {
   SHAPE_CIRCLE,
   SHAPE_ROUNDED,
   SHAPE_SQUARE,
-} from "../../../constants";
+} from "../../../../constants";
 
 const borderRadiusVariants = {
   [SHAPE_SQUARE]: "0px",

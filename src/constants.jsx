@@ -13,3 +13,5 @@ export const SHADOW_HARD = "hard";
 export const BUTTON_COLOR = "white";
 export const BUTTON_FONT_COLOR = "black";
 export const SHADOW_COLOR = "gray";
+
+export const FONT_COLOR = "white";
