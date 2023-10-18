@@ -18,15 +18,18 @@ const ButtonColors = ({ styles, updateStyle }) => {
       />
       <ColorPicker
         heading="Button font color"
-        background={styles.fontColor}
-        onChange={(color) => updateStyle("fontColor", color.hex)}
+        background={styles.buttonFontColor}
+        onChange={(color) => updateStyle("buttonFontColor", color.hex)}
         onKeyDown={(e) => {
           const val = e.target.value;
           if (e.key === "Enter" && val) {
-            updateStyle("fontColor", val !== "#" ? val : styles.fontColor);
+            updateStyle(
+              "buttonFontColor",
+              val !== "#" ? val : styles.buttonFontColor
+            );
           }
         }}
-        inputVal={styles.fontColor}
+        inputVal={styles.buttonFontColor}
       />
       <ColorPicker
         heading="Shadow color"
