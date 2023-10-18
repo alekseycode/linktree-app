@@ -1,21 +1,5 @@
 import { useState } from "react";
-import {
-  Avatar,
-  Box,
-  Button,
-  Flex,
-  Icon,
-  Image,
-  Input,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Switch,
-  Text,
-  Textarea,
-} from "@chakra-ui/react";
-import ChevronDownIcon from "../../icons/ChevronDownIcon";
+import { Flex, Image, Switch, Text } from "@chakra-ui/react";
 
 import {
   SHAPE_SQUARE,
@@ -24,12 +8,17 @@ import {
   SHADOW_COLOR,
   BG_COLOR,
   BUTTON_FONT_COLOR,
+  FONT_COLOR,
 } from "../../constants";
-import ButtonStyles from "./buttons/ButtonStyles";
-import ButtonColors from "./buttons/ButtonColors";
+import ButtonStyles from "./buttons/components/ButtonStyles";
+import ButtonColors from "./buttons/components/ButtonColors";
 import Backgrounds from "./backgrounds/Backgrounds";
 import Themes from "./themes/themes";
 import Profile from "./profile/Profile";
+import Fonts from "./fonts/Fonts";
+import Buttons from "./buttons/Buttons";
+import HideLogo from "./logo/HideLogo";
+import CustomAppearance from "./custom/CustomAppearance";
 
 const Appearance = () => {
   const [styles, setStyles] = useState({
@@ -40,6 +29,7 @@ const Appearance = () => {
     buttonFontColor: BUTTON_FONT_COLOR,
     shadowColor: SHADOW_COLOR,
     bgColor: BG_COLOR,
+    fontColor: FONT_COLOR,
   });
 
   const updateStyle = (prop, value) => {
@@ -52,94 +42,18 @@ const Appearance = () => {
   return (
     <Flex flexDir="column" ml="30px" flexGrow="1" maxW="70%">
       <Profile />
-      <Themes />
-      <Text mt="48px" fontSize="1.4rem">
-        Custom Appearance
-      </Text>
-      <Text mt="18px" fontSize="1rem" maxW="600px">
-        Completely customize your Linktree profile. Change your background with
-        colors, gradients and images. Choose a button style, change the typeface
-        and more.
-      </Text>
 
-      <Text mt="48px" mb="16px" fontSize="1.4rem">
-        Backgrounds
-      </Text>
+      <Themes />
+
+      <CustomAppearance />
+
       <Backgrounds styles={styles} updateStyle={updateStyle} />
 
-      <Text mt="48px" mb="16px" fontSize="1.4rem">
-        Buttons
-      </Text>
-      <Flex flexDir="column" bg="gray.700" borderRadius="30px" px="28px">
-        <ButtonStyles styles={styles} updateStyle={updateStyle} />
-        <ButtonColors styles={styles} updateStyle={updateStyle} />
-      </Flex>
+      <Buttons styles={styles} updateStyle={updateStyle} />
 
-      <Text mt="48px" mb="16px" fontSize="1.4rem">
-        Fonts
-      </Text>
-      <Flex
-        flexDir="column"
-        bg="gray.700"
-        borderRadius="30px"
-        px="28px"
-        mb="60px"
-      >
-        <Text ml="18px" mt="28px" mb="18px">
-          Font
-        </Text>
-        <Menu>
-          <MenuButton
-            boxShadow="0px 2px 4px lightgray"
-            mb="28px"
-            mx="18px"
-            as={Button}
-            rightIcon={
-              <Icon w="10px" h="10px" color="white" as={ChevronDownIcon} />
-            }
-          >
-            Arvo
-          </MenuButton>
-          <MenuList>
-            <MenuItem>Arvo</MenuItem>
-            <MenuItem>Bitter</MenuItem>
-            <MenuItem>Calistoga</MenuItem>
-            <MenuItem>Crimson Text</MenuItem>
-            <MenuItem>EB Garamond</MenuItem>
-          </MenuList>
-        </Menu>
-        <Text ml="18px" fontWeight="600" mb="10px">
-          Color
-        </Text>
-        <Flex ml="18px" mb="28px">
-          <Box
-            h="50px"
-            w="50px"
-            bg="white"
-            borderRadius="10px"
-            mr="20px"
-            cursor="pointer"
-          ></Box>
-          <Input placeholder="Color" w="200px" height="50px" />
-        </Flex>
-      </Flex>
-      <Flex
-        flexDir="column"
-        bg="gray.700"
-        borderRadius="30px"
-        px="28px"
-        mb="100px"
-      >
-        <Flex justifyContent="space-between" mt="18px" mb="8px">
-          <Text fontSize="1.1rem">Hide the Linktree logo</Text>
-          <Switch mr="20px" />
-        </Flex>
-        <Image
-          w="110px"
-          h="70px"
-          src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
-        />
-      </Flex>
+      <Fonts styles={styles} updateStyle={updateStyle} />
+
+      <HideLogo />
     </Flex>
   );
 };

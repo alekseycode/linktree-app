@@ -1,5 +1,5 @@
 import React from "react";
-import ColorPicker from "./items/ColorPicker";
+import ColorPicker from "../items/ColorPicker";
 
 const ButtonColors = ({ styles, updateStyle }) => {
   return (
