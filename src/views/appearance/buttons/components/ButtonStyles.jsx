@@ -8,7 +8,7 @@ import {
   SHAPE_CIRCLE,
   SHAPE_ROUNDED,
   SHAPE_SQUARE,
-} from "../../../../constants";
+} from "../../../../constants/constants";
 
 const borderRadiusVariants = {
   [SHAPE_SQUARE]: "0px",

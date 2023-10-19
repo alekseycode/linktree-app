@@ -1,13 +1,18 @@
 import { Avatar, Flex, Image, Text } from "@chakra-ui/react";
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import useDesign from "../../hooks/useDesign";
 
 const Preview = () => {
+  const { design } = useDesign(1);
+  const { title, desc, imgURL, links = [] } = design || {};
+
   return (
     <Flex mt="5%">
       <Flex flexGrow="1" maxWidth="55%" mt="2%" justifyContent="center">
         <Outlet />
       </Flex>
+
+      {/* Preview Container */}
       <Flex flexGrow="1" justifyContent="center" mt="12%">
         <Flex
           border="solid"
@@ -22,7 +27,7 @@ const Preview = () => {
           <Flex flexDir="column">
             <Avatar
               name="Rob Banks"
-              src="https://bit.ly/dan-abramov"
+              src={imgURL}
               mt="20%"
               mb="5%"
               mx="auto"
