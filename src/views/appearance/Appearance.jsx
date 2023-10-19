@@ -9,9 +9,7 @@ import {
   BG_COLOR,
   BUTTON_FONT_COLOR,
   FONT_COLOR,
-} from "../../constants";
-import ButtonStyles from "./buttons/components/ButtonStyles";
-import ButtonColors from "./buttons/components/ButtonColors";
+} from "../../constants/constants";
 import Backgrounds from "./backgrounds/Backgrounds";
 import Themes from "./themes/themes";
 import Profile from "./profile/Profile";
