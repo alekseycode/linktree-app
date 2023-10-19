@@ -1,4 +1,4 @@
-import { Button, Flex, Switch } from "@chakra-ui/react";
+import { Box, Button, Flex, Switch, Text } from "@chakra-ui/react";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import InputItem from "./InputItem";
@@ -9,13 +9,24 @@ const LinkItem = ({ id, url, name, deleteLinkItem, updateLink }) => {
       <Flex mx="5%" mt="5%" flexDir="column" flexGrow={1}>
         <Flex alignItems="start" justifyContent="space-between">
           <Flex flexDir="column">
-            <InputItem
-              value={name}
-              updateLink={updateLink}
-              id={id}
-              prop="name"
-            />
-            <InputItem value={url} updateLink={updateLink} id={id} prop="url" />
+            <Flex alignItems="center">
+              <Box w="60px">Name</Box>
+              <InputItem
+                value={name}
+                updateLink={updateLink}
+                id={id}
+                prop="name"
+              />
+            </Flex>
+            <Flex alignItems="center">
+              <Box w="60px">URL</Box>
+              <InputItem
+                value={url}
+                updateLink={updateLink}
+                id={id}
+                prop="url"
+              />
+            </Flex>
           </Flex>
           <Switch />
         </Flex>
