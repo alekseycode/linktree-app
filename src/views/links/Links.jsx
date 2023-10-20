@@ -1,27 +1,42 @@
 import { Button, Flex } from "@chakra-ui/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import AddLink from "./components/AddLink";
 import LinkItem from "./components/items/LinkItem";
 import LinktreeURL from "./components/LinktreeURL";
+import { useQueryClient } from "react-query";
+import { DESIGN } from "../../constants/queryKeys";
+import useDesign from "../../hooks/useDesign";
 
 const Links = () => {
+  const queryClient = useQueryClient();
   const [showAddLink, setShowAddLink] = useState(false);
-  const [linkItems, setLinkItems] = useState([]);
 
-  const createLinkItem = (newLink) =>
-    setLinkItems((prevItems) => [newLink, ...prevItems]);
+  const { design, isLoading, isError, isSuccess } = useDesign(1);
+  const { name, title, desc, imgUrl, links = [], socials = [] } = design || {};
+
+  const createLinkItem = (link) => {
+    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+      ...cache,
+      links: [{ ...link }, ...cache.links],
+    }));
+  };
 
   const deleteLinkItem = (id) => {
-    const newLinksArr = linkItems.filter((link) => link.id !== id);
-    setLinkItems(newLinksArr);
+    const newLinksArr = links.filter((link) => link.id !== id);
+    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+      ...cache,
+      links: [...newLinksArr],
+    }));
   };
 
   const updateLink = (id, prop, value) => {
-    setLinkItems((prevItems) =>
-      prevItems.map((link) =>
-        link.id === id ? { ...link, [prop]: value } : link
-      )
+    const newLinksArr = links.map((link) =>
+      link.id === id ? { ...link, [prop]: value } : link
     );
+    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+      ...cache,
+      links: [...newLinksArr],
+    }));
   };
 
   return (
@@ -44,16 +59,20 @@ const Links = () => {
         </Button>
       )}
       <Flex flexDir="column-reverse">
-        {linkItems.map((link) => (
-          <LinkItem
-            id={link.id}
-            name={link.name}
-            url={link.url}
-            deleteLinkItem={deleteLinkItem}
-            key={link.id}
-            updateLink={updateLink}
-          />
-        ))}
+        {links.length === 0 ? (
+          <></>
+        ) : (
+          links.map((link) => (
+            <LinkItem
+              id={link.id}
+              name={link.name}
+              url={link.url}
+              deleteLinkItem={deleteLinkItem}
+              key={link.id}
+              updateLink={updateLink}
+            />
+          ))
+        )}
       </Flex>
     </Flex>
   );

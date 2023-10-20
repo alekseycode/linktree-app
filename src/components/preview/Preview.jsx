@@ -1,6 +1,7 @@
 import { Avatar, Flex, Image, Text } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import useDesign from "../../hooks/useDesign";
+import PreviewLink from "./PreviewLink";
 
 const Preview = () => {
   const { design } = useDesign(1);
@@ -13,30 +14,38 @@ const Preview = () => {
       </Flex>
 
       {/* Preview Container */}
-      <Flex flexGrow="1" justifyContent="center" mt="12%">
+      <Flex flexGrow="1" justifyContent="center" mt="8%">
         <Flex
           border="solid"
           borderRadius="20px"
           w="18%"
-          h="50%"
+          h="64%"
           maxW="300px"
           position="fixed"
           flexDirection="column"
           justifyContent="space-between"
         >
           <Flex flexDir="column">
-            <Avatar
-              name="Rob Banks"
-              src={imgURL}
-              mt="20%"
-              mb="5%"
-              mx="auto"
-              w="35%"
-              h="50%"
-            />
-            <Text mx="auto" fontSize="1.2rem">
-              @rob_banks
-            </Text>
+            <Flex flexDir="column">
+              <Avatar
+                name="Rob Banks"
+                src={imgURL}
+                mt="20%"
+                mb="5%"
+                mx="auto"
+                w="60px"
+                h="60px"
+              />
+              <Text mx="auto" fontSize="1.2rem" mb="3%">
+                @rob_banks
+              </Text>
+            </Flex>
+
+            <Flex flexDir="column-reverse">
+              {links.map((link) => (
+                <PreviewLink key={link.id} name={link.name} url={link.url} />
+              ))}
+            </Flex>
           </Flex>
           <Image
             w="30%"
