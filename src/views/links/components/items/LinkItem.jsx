@@ -28,7 +28,7 @@ const LinkItem = ({ id, url, name, deleteLinkItem, updateLink }) => {
               />
             </Flex>
           </Flex>
-          <Switch />
+          <Switch name="showLink" />
         </Flex>
         <Flex justifyContent="end">
           <Button onClick={() => deleteLinkItem(id)} bg="gray.700" mr="-10px">
