@@ -25,6 +25,7 @@ const InputItem = ({ value, updateLink, id, prop }) => {
           setIsEditing(false);
           updateLink(id, prop, e.target.value);
         }}
+        name="editLink"
       ></Input>
       {!isEditing && (
         <Flex alignItems="center">

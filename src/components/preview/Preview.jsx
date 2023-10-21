@@ -8,13 +8,13 @@ const Preview = () => {
   const { title, desc, imgURL, links = [] } = design || {};
 
   return (
-    <Flex mt="5%">
+    <Flex mt="4%">
       <Flex flexGrow="1" maxWidth="55%" mt="2%" justifyContent="center">
         <Outlet />
       </Flex>
 
       {/* Preview Container */}
-      <Flex flexGrow="1" justifyContent="center" mt="8%">
+      <Flex flexGrow="1" justifyContent="center" mt="6%">
         <Flex
           border="solid"
           borderRadius="20px"

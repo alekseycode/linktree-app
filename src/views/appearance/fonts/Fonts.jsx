@@ -29,7 +29,7 @@ const Fonts = ({ styles, updateStyle }) => {
         <Text ml="18px" mt="28px" mb="18px">
           Font
         </Text>
-        <Menu>
+        <Menu name="font menu">
           <MenuButton
             boxShadow="0px 2px 4px lightgray"
             mb="28px"

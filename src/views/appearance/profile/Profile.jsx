@@ -41,8 +41,14 @@ const Profile = () => {
           </Flex>
         </Flex>
         <Flex flexDir="column" alignItems="center">
-          <Input placeholder="Profile title" maxW="90%" mt="40px" mb="10px" />
-          <Textarea placeholder="Bio" maxW="90%" />
+          <Input
+            placeholder="Profile title"
+            maxW="90%"
+            mt="40px"
+            mb="10px"
+            name="profileTitle"
+          />
+          <Textarea placeholder="Bio" maxW="90%" name="profileBio" />
           <Text alignSelf="end" mb="30px" mr="40px" fontSize="0.75rem">
             0 / 80
           </Text>

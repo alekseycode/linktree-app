@@ -1,5 +1,5 @@
 import { Button, Flex } from "@chakra-ui/react";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import AddLink from "./components/AddLink";
 import LinkItem from "./components/items/LinkItem";
 import LinktreeURL from "./components/LinktreeURL";

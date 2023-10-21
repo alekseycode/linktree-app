@@ -28,6 +28,7 @@ const AddLink = ({ createLinkItem, onXClick, id }) => {
             mr="25px"
             value={url}
             onChange={(e) => setUrl(e.target.value.trim())}
+            name="addLink"
           />
           <Button
             isDisabled={!url}

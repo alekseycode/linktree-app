@@ -11,12 +11,13 @@ const HideLogo = () => {
     >
       <Flex justifyContent="space-between" mt="18px" mb="8px">
         <Text fontSize="1.1rem">Hide the Linktree logo</Text>
-        <Switch mr="20px" />
+        <Switch mr="20px" name="hide logo" />
       </Flex>
       <Image
         w="110px"
         h="70px"
         src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
+        name="linktree logo"
       />
     </Flex>
   );

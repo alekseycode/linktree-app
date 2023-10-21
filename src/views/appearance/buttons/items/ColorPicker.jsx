@@ -41,7 +41,12 @@ const ColorPicker = ({
           </PopoverContent>
         </Popover>
 
-        <Input placeholder={inputVal} w="30%" onKeyDown={onKeyDown} />
+        <Input
+          placeholder={inputVal}
+          w="30%"
+          onKeyDown={onKeyDown}
+          name="colorPicker"
+        />
       </Flex>
     </>
   );
