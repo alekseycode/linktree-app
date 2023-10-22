@@ -47,6 +47,7 @@ const Links = () => {
         <AddLink
           createLinkItem={createLinkItem}
           onXClick={() => setShowAddLink(false)}
+          setShowAddLink={setShowAddLink}
         />
       ) : (
         <Button

@@ -2,7 +2,7 @@ import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import uuid from "react-uuid";
 
-const AddLink = ({ createLinkItem, onXClick, id }) => {
+const AddLink = ({ createLinkItem, onXClick, id, setShowAddLink }) => {
   const [url, setUrl] = useState("");
   return (
     <Flex bg="gray.700" borderRadius="20px" mb="40px" pb="10px" id={id}>
@@ -40,6 +40,7 @@ const AddLink = ({ createLinkItem, onXClick, id }) => {
                 isActive: true,
               });
               setUrl("");
+              setShowAddLink(false);
             }}
             borderRadius="full"
             px="30px"
