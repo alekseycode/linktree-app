@@ -1,4 +1,4 @@
-import { Flex, Text, background } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 const BackgroundItem = ({ option, border, background }) => {
   return (
