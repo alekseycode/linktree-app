@@ -26,6 +26,7 @@ const InputItem = ({ value, updateLink, id, prop }) => {
           updateLink(id, prop, e.target.value);
         }}
         name="editLink"
+        onClick={() => handlePencilClick()}
       ></Input>
       {!isEditing && (
         <Flex alignItems="center">
