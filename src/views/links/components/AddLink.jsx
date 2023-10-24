@@ -37,7 +37,7 @@ const AddLink = ({ createLinkItem, onXClick, id, setShowAddLink }) => {
                 id: uuid(),
                 url,
                 name: url,
-                isActive: true,
+                active: true,
               });
               setUrl("");
               setShowAddLink(false);

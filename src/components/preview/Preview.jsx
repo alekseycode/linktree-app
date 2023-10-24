@@ -43,7 +43,12 @@ const Preview = () => {
 
             <Flex flexDir="column-reverse">
               {links.map((link) => (
-                <PreviewLink key={link.id} name={link.name} url={link.url} />
+                <PreviewLink
+                  key={link.id}
+                  name={link.name}
+                  url={link.url}
+                  active={link.active}
+                />
               ))}
             </Flex>
           </Flex>

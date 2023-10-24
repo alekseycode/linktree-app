@@ -6,13 +6,13 @@ const DESIGN = {
   imgURL: "https://bit.ly/dan-abramov",
   public: true,
   links: [
-    // {
-    //   id: 1,
-    //   name: "YouTube",
-    //   url: "https://www.youtube.com/",
-    //   icon: "I_YT",
-    //   active: true,
-    // },
+    {
+      id: 1,
+      name: "YouTube",
+      url: "https://www.youtube.com/",
+      icon: "I_YT",
+      active: true,
+    },
     // {
     //   id: 2,
     //   name: "Facebook",
