@@ -11,7 +11,7 @@ import {
   FONT_COLOR,
 } from "../../constants/constants";
 import Backgrounds from "./backgrounds/Backgrounds";
-import Themes from "./themes/themes";
+import Themes from "./themes/Themes";
 import Profile from "./profile/Profile";
 import Fonts from "./fonts/Fonts";
 import Buttons from "./buttons/Buttons";
