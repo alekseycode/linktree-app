@@ -71,6 +71,7 @@ const Links = () => {
               deleteLinkItem={deleteLinkItem}
               key={link.id}
               updateLink={updateLink}
+              active={link.active}
             />
           ))
         )}
