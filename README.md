@@ -6,7 +6,7 @@ Welcome to the LinkTree Clone App, a simple web application built in React that 
 
 - Create a personalized profile page with your own background image and profile picture.
 - Add, edit, or delete links to your social media profiles, websites, and more.
-- Customize the order and appearance of your links.
+- Customize the appearance of your links.
 - Share your profile link with others, making it easier for them to connect with you online.
 
 ## Prerequisites
