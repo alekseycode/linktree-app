@@ -8,14 +8,24 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { DESIGN } from "../../../constants/queryKeys";
+import { useQueryClient } from "react-query";
+import { useRef, useState } from "react";
 
-const Profile = () => {
-  // const updateProfile = (prop, value) => {
-  //   queryClient.setQueryData([DESIGN, 1], (cache) => ({
-  //     ...cache,
-  //     [prop]: value,
-  //   }));
-  // };
+const Profile = ({ title, bio }) => {
+  const titleRef = useRef(null);
+  const bioRef = useRef(null);
+  const [bioLength, setBioLength] = useState(0);
+  const [disclaimer, setDisclaimer] = useState(false);
+  const queryClient = useQueryClient();
+
+  const MAX_BIO = 80;
+
+  const updateProfile = (prop, value) => {
+    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+      ...cache,
+      [prop]: value,
+    }));
+  };
 
   return (
     <>
@@ -50,19 +60,43 @@ const Profile = () => {
         </Flex>
         <Flex flexDir="column" alignItems="center">
           <Input
-            placeholder="Profile title"
+            ref={titleRef}
+            placeholder={title}
             maxW="90%"
             mt="40px"
             mb="10px"
             name="profileTitle"
-            onChange={(e) => updateProfile("title", e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && titleRef.current.blur()}
+            onBlur={(e) => updateProfile("title", e.target.value)}
           />
-          <Textarea placeholder="Bio" maxW="90%" name="profileBio" />
-          <Text alignSelf="end" mb="30px" mr="40px" fontSize="0.75rem">
-            0 / 80
+          <Textarea
+            ref={bioRef}
+            placeholder={bio}
+            maxW="90%"
+            name="profileBio"
+            onKeyDown={(e) => {
+              e.key === "Enter" && bioRef.current.blur();
+            }}
+            onBlur={(e) => {
+              bioLength > MAX_BIO ? setDisclaimer(true) : setDisclaimer(false);
+              bioLength <= MAX_BIO && updateProfile("bio", e.target.value);
+            }}
+            onChange={(e) => setBioLength(e.target.value.length)}
+          />
+          <Text
+            alignSelf="end"
+            mr="40px"
+            fontSize="0.75rem"
+            color={bioLength <= MAX_BIO ? "white" : "red"}
+          >
+            {bioLength + " / " + MAX_BIO}
           </Text>
 
-          <Box h="1px" bg="gray" w="full"></Box>
+          {disclaimer && (
+            <Text color="red">Bio cannot exceed 80 characters.</Text>
+          )}
+
+          <Box h="1px" bg="gray" w="full" mt="30px"></Box>
 
           <Button
             variant="ghost"

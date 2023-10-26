@@ -39,7 +39,7 @@ const Preview = () => {
               <Text mx="auto" fontSize="1.2rem" mb="3%">
                 {"@" + title}
               </Text>
-              <Text mx="auto" mb="8%">
+              <Text mx="auto" mb="8%" maxW="80%" textAlign="center">
                 {bio}
               </Text>
             </Flex>

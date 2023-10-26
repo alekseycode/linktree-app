@@ -17,8 +17,12 @@ import Fonts from "./fonts/Fonts";
 import Buttons from "./buttons/Buttons";
 import HideLogo from "./logo/HideLogo";
 import CustomAppearance from "./custom/CustomAppearance";
+import useDesign from "../../hooks/useDesign";
 
 const Appearance = () => {
+  const { design } = useDesign(1);
+  const { title, bio } = design || {};
+
   const [styles, setStyles] = useState({
     shape: SHAPE_SQUARE,
     variant: BG_NONE,
@@ -39,7 +43,7 @@ const Appearance = () => {
 
   return (
     <Flex flexDir="column" ml="30px" flexGrow="1" maxW="70%">
-      <Profile />
+      <Profile title={title} bio={bio} />
 
       <Themes />
 
