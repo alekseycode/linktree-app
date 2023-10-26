@@ -1,8 +1,9 @@
 const DESIGN = {
   id: 1,
   name: "Personal Links",
-  title: "Losh's Links",
+  title: "losh_cherns",
   desc: "by Aleksey C",
+  bio: "elite junior dev",
   imgURL: "https://bit.ly/dan-abramov",
   public: true,
   links: [

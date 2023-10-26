@@ -7,8 +7,16 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
+import { DESIGN } from "../../../constants/queryKeys";
 
 const Profile = () => {
+  // const updateProfile = (prop, value) => {
+  //   queryClient.setQueryData([DESIGN, 1], (cache) => ({
+  //     ...cache,
+  //     [prop]: value,
+  //   }));
+  // };
+
   return (
     <>
       <Text mt="48px" mb="16px" fontSize="1.4rem">
@@ -47,6 +55,7 @@ const Profile = () => {
             mt="40px"
             mb="10px"
             name="profileTitle"
+            onChange={(e) => updateProfile("title", e.target.value)}
           />
           <Textarea placeholder="Bio" maxW="90%" name="profileBio" />
           <Text alignSelf="end" mb="30px" mr="40px" fontSize="0.75rem">
