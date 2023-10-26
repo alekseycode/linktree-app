@@ -5,7 +5,7 @@ import PreviewLink from "./PreviewLink";
 
 const Preview = () => {
   const { design } = useDesign(1);
-  const { title, desc, imgURL, links = [] } = design || {};
+  const { title, bio, imgURL, links = [] } = design || {};
 
   return (
     <Flex mt="4%">
@@ -33,11 +33,14 @@ const Preview = () => {
                 mt="20%"
                 mb="5%"
                 mx="auto"
-                w="60px"
-                h="60px"
+                w="80px"
+                h="80px"
               />
               <Text mx="auto" fontSize="1.2rem" mb="3%">
-                @rob_banks
+                {"@" + title}
+              </Text>
+              <Text mx="auto" mb="8%">
+                {bio}
               </Text>
             </Flex>
 
