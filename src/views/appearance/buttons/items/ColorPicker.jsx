@@ -15,6 +15,7 @@ const ColorPicker = ({
   onChange,
   onKeyDown,
   inputVal,
+  onBlur,
 }) => {
   return (
     <>
@@ -34,7 +35,7 @@ const ColorPicker = ({
               cursor="pointer"
             ></Box>
           </PopoverTrigger>
-          <PopoverContent w="90%" ml="34%">
+          <PopoverContent w="90%" ml="34%" onBlur={onBlur}>
             <Flex justifyContent="center">
               <ChromePicker onChange={onChange} color={background} />
             </Flex>

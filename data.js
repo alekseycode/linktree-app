@@ -5,6 +5,7 @@ const DESIGN = {
   desc: "by Aleksey C",
   bio: "elite junior dev",
   imgURL: "https://bit.ly/dan-abramov",
+  bgColor: "gray.800",
   public: true,
   links: [
     {

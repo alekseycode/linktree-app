@@ -18,8 +18,11 @@ import Buttons from "./buttons/Buttons";
 import HideLogo from "./logo/HideLogo";
 import CustomAppearance from "./custom/CustomAppearance";
 import useDesign from "../../hooks/useDesign";
+import { DESIGN } from "../../constants/queryKeys";
+import { useQueryClient } from "react-query";
 
 const Appearance = () => {
+  const queryClient = useQueryClient();
   const { design } = useDesign(1);
   const { title, bio } = design || {};
 
@@ -41,15 +44,26 @@ const Appearance = () => {
     }));
   };
 
+  const updateDesign = (prop, value) => {
+    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+      ...cache,
+      [prop]: value,
+    }));
+  };
+
   return (
     <Flex flexDir="column" ml="30px" flexGrow="1" maxW="70%">
-      <Profile title={title} bio={bio} />
+      <Profile title={title} bio={bio} updateDesign={updateDesign} />
 
       <Themes />
 
       <CustomAppearance />
 
-      <Backgrounds styles={styles} updateStyle={updateStyle} />
+      <Backgrounds
+        styles={styles}
+        updateStyle={updateStyle}
+        updateDesign={updateDesign}
+      />
 
       <Buttons styles={styles} updateStyle={updateStyle} />
 
