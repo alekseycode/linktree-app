@@ -7,25 +7,15 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { DESIGN } from "../../../constants/queryKeys";
-import { useQueryClient } from "react-query";
 import { useRef, useState } from "react";
 
-const Profile = ({ title, bio }) => {
+const Profile = ({ title, bio, updateDesign }) => {
   const titleRef = useRef(null);
   const bioRef = useRef(null);
   const [bioLength, setBioLength] = useState(0);
   const [disclaimer, setDisclaimer] = useState(false);
-  const queryClient = useQueryClient();
 
   const MAX_BIO = 80;
-
-  const updateProfile = (prop, value) => {
-    queryClient.setQueryData([DESIGN, 1], (cache) => ({
-      ...cache,
-      [prop]: value,
-    }));
-  };
 
   return (
     <>
@@ -67,19 +57,17 @@ const Profile = ({ title, bio }) => {
             mb="10px"
             name="profileTitle"
             onKeyDown={(e) => e.key === "Enter" && titleRef.current.blur()}
-            onBlur={(e) => updateProfile("title", e.target.value)}
+            onBlur={(e) => updateDesign("title", e.target.value)}
           />
           <Textarea
             ref={bioRef}
             placeholder={bio}
             maxW="90%"
             name="profileBio"
-            onKeyDown={(e) => {
-              e.key === "Enter" && bioRef.current.blur();
-            }}
+            onKeyDown={(e) => e.key === "Enter" && bioRef.current.blur()}
             onBlur={(e) => {
               bioLength > MAX_BIO ? setDisclaimer(true) : setDisclaimer(false);
-              bioLength <= MAX_BIO && updateProfile("bio", e.target.value);
+              bioLength <= MAX_BIO && updateDesign("bio", e.target.value);
             }}
             onChange={(e) => setBioLength(e.target.value.length)}
           />

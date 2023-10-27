@@ -1,8 +1,8 @@
 import { Flex, Text } from "@chakra-ui/react";
 
-const BackgroundItem = ({ option, border, background }) => {
+const BackgroundItem = ({ option, border, background, onClick }) => {
   return (
-    <Flex flexDir="column" alignItems="center">
+    <Flex flexDir="column" alignItems="center" onClick={onClick}>
       <Flex
         h="200px"
         w="128px"

@@ -5,7 +5,7 @@ import PreviewLink from "./PreviewLink";
 
 const Preview = () => {
   const { design } = useDesign(1);
-  const { title, bio, imgURL, links = [] } = design || {};
+  const { title, bio, imgURL, links = [], bgColor } = design || {};
 
   return (
     <Flex mt="4%">
@@ -24,6 +24,7 @@ const Preview = () => {
           position="fixed"
           flexDirection="column"
           justifyContent="space-between"
+          bg={bgColor}
         >
           <Flex flexDir="column">
             <Flex flexDir="column">
