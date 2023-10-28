@@ -65,7 +65,11 @@ const Appearance = () => {
         updateDesign={updateDesign}
       />
 
-      <Buttons styles={styles} updateStyle={updateStyle} />
+      <Buttons
+        styles={styles}
+        updateStyle={updateStyle}
+        updateDesign={updateDesign}
+      />
 
       <Fonts styles={styles} updateStyle={updateStyle} />
 

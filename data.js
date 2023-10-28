@@ -6,6 +6,9 @@ const DESIGN = {
   bio: "elite junior dev",
   imgURL: "https://bit.ly/dan-abramov",
   bgColor: "gray.800",
+  shape: "0px",
+  variantColor: "green",
+  shadow: "",
   public: true,
   links: [
     {

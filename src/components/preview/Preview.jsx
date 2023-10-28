@@ -5,7 +5,16 @@ import PreviewLink from "./PreviewLink";
 
 const Preview = () => {
   const { design } = useDesign(1);
-  const { title, bio, imgURL, links = [], bgColor } = design || {};
+  const {
+    title,
+    bio,
+    imgURL,
+    links = [],
+    bgColor,
+    shape,
+    variantColor,
+    shadow,
+  } = design || {};
 
   return (
     <Flex mt="4%">
@@ -52,6 +61,9 @@ const Preview = () => {
                   name={link.name}
                   url={link.url}
                   active={link.active}
+                  borderRadius={shape}
+                  variantColor={variantColor}
+                  shadow={shadow}
                 />
               ))}
             </Flex>
