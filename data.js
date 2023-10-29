@@ -7,9 +7,12 @@ const DESIGN = {
   imgURL: "https://bit.ly/dan-abramov",
   bgColor: "gray.800",
   shape: "0px",
-  variantColor: "green",
+  variantColor: "",
   shadow: "",
+  fontColor: "white",
+  shadowColor: "gray",
   public: true,
+  buttonFontColor: "white",
   links: [
     {
       id: 1,
