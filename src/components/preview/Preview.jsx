@@ -14,6 +14,9 @@ const Preview = () => {
     shape,
     variantColor,
     shadow,
+    fontColor,
+    shadowColor,
+    buttonFontColor,
   } = design || {};
 
   return (
@@ -64,6 +67,8 @@ const Preview = () => {
                   borderRadius={shape}
                   variantColor={variantColor}
                   shadow={shadow}
+                  shadowColor={shadowColor}
+                  buttonFontColor={buttonFontColor}
                 />
               ))}
             </Flex>

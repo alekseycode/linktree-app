@@ -7,20 +7,23 @@ const PreviewLink = ({
   borderRadius,
   variantColor,
   shadow,
+  shadowColor,
+  buttonFontColor,
 }) => {
   return (
     active && (
       <Flex
         justifyContent="center"
         bg={variantColor}
-        border="1px solid white"
+        border={!variantColor && "1px solid white"}
         py="10px"
         mx="10%"
         my="2%"
         borderRadius={borderRadius}
-        shadow={shadow}
+        shadow={shadow + " " + shadowColor}
+        color={buttonFontColor}
       >
-        <Link isExternal href={url}>
+        <Link isExternal href={url} _hover={{ textDecor: "none" }}>
           {name}
         </Link>
       </Flex>

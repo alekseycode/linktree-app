@@ -1,21 +1,29 @@
 import React from "react";
 import ColorPicker from "../items/ColorPicker";
+import { BG_NONE } from "../../../../constants/constants";
 
-const ButtonColors = ({ styles, updateStyle }) => {
+const ButtonColors = ({ styles, updateStyle, updateDesign }) => {
   return (
     <>
-      <ColorPicker
-        heading="Button color"
-        background={styles.buttonColor}
-        onChange={(color) => updateStyle("buttonColor", color.hex)}
-        onKeyDown={(e) => {
-          const val = e.target.value;
-          if (e.key === "Enter" && val) {
-            updateStyle("buttonColor", val !== "#" ? val : styles.buttonColor);
-          }
-        }}
-        inputVal={styles.buttonColor}
-      />
+      {styles.variant !== BG_NONE && (
+        <ColorPicker
+          heading="Button color"
+          background={styles.buttonColor}
+          onChange={(color) => updateStyle("buttonColor", color.hex)}
+          onKeyDown={(e) => {
+            const val = e.target.value;
+            if (e.key === "Enter" && val) {
+              updateStyle(
+                "buttonColor",
+                val !== "#" ? val : styles.buttonColor
+              );
+              updateDesign("variantColor", val);
+            }
+          }}
+          inputVal={styles.buttonColor}
+          onBlur={() => updateDesign("variantColor", styles.buttonColor)}
+        />
+      )}
       <ColorPicker
         heading="Button font color"
         background={styles.buttonFontColor}
@@ -27,22 +35,31 @@ const ButtonColors = ({ styles, updateStyle }) => {
               "buttonFontColor",
               val !== "#" ? val : styles.buttonFontColor
             );
+            updateDesign("buttonFontColor", val);
           }
         }}
         inputVal={styles.buttonFontColor}
+        onBlur={() => updateDesign("buttonFontColor", styles.buttonFontColor)}
       />
-      <ColorPicker
-        heading="Shadow color"
-        background={styles.shadowColor}
-        onChange={(color) => updateStyle("shadowColor", color.hex)}
-        onKeyDown={(e) => {
-          const val = e.target.value;
-          if (e.key === "Enter" && val) {
-            updateStyle("shadowColor", val !== "#" ? val : styles.shadowColor);
-          }
-        }}
-        inputVal={styles.shadowColor}
-      />
+      {styles.shadow && (
+        <ColorPicker
+          heading="Shadow color"
+          background={styles.shadowColor}
+          onChange={(color) => updateStyle("shadowColor", color.hex)}
+          onKeyDown={(e) => {
+            const val = e.target.value;
+            if (e.key === "Enter" && val) {
+              updateStyle(
+                "shadowColor",
+                val !== "#" ? val : styles.shadowColor
+              );
+              updateDesign("shadowColor", val);
+            }
+          }}
+          inputVal={styles.shadowColor}
+          onBlur={() => updateDesign("shadowColor", styles.shadowColor)}
+        />
+      )}
     </>
   );
 };

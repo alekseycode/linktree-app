@@ -91,7 +91,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
         <ButtonItem
           onClick={() => {
             updateStyle("shadow", SHADOW_SOFT);
-            updateDesign("shadow", "0px 2px 2px " + styles.shadowColor);
+            updateDesign("shadow", "0px 3px 3px");
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_SOFT}
@@ -101,7 +101,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
         <ButtonItem
           onClick={() => {
             updateStyle("shadow", SHADOW_HARD);
-            updateDesign("shadow", "6px 6px 6px " + styles.shadowColor);
+            updateDesign("shadow", "6px 6px 6px");
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_HARD}
