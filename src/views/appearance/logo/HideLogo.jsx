@@ -1,6 +1,8 @@
 import { Flex, Image, Switch, Text } from "@chakra-ui/react";
+import { useState } from "react";
 
-const HideLogo = () => {
+const HideLogo = ({ updateDesign }) => {
+  const [showLogo, setShowLogo] = useState(false);
   return (
     <Flex
       flexDir="column"
@@ -11,7 +13,14 @@ const HideLogo = () => {
     >
       <Flex justifyContent="space-between" mt="18px" mb="8px">
         <Text fontSize="1.1rem">Hide the Linktree logo</Text>
-        <Switch mr="20px" name="hide logo" />
+        <Switch
+          mr="20px"
+          name="hide logo"
+          onChange={() => {
+            setShowLogo((prev) => !prev);
+            updateDesign("showLogo", showLogo);
+          }}
+        />
       </Flex>
       <Image
         w="110px"
