@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Flex, Image, Switch, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 import {
   SHAPE_SQUARE,
@@ -73,7 +73,7 @@ const Appearance = () => {
 
       <Fonts styles={styles} updateStyle={updateStyle} />
 
-      <HideLogo />
+      <HideLogo updateDesign={updateDesign} />
     </Flex>
   );
 };

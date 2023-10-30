@@ -10,9 +10,10 @@ const DESIGN = {
   variantColor: "",
   shadow: "",
   fontColor: "white",
-  shadowColor: "gray",
+  shadowColor: "black",
   public: true,
   buttonFontColor: "white",
+  showLogo: true,
   links: [
     {
       id: 1,

@@ -14,9 +14,9 @@ const Preview = () => {
     shape,
     variantColor,
     shadow,
-    fontColor,
     shadowColor,
     buttonFontColor,
+    showLogo,
   } = design || {};
 
   return (
@@ -73,12 +73,15 @@ const Preview = () => {
               ))}
             </Flex>
           </Flex>
-          <Image
-            w="30%"
-            src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
-            mx="auto"
-            mb="15%"
-          />
+
+          {showLogo && (
+            <Image
+              w="30%"
+              src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
+              mx="auto"
+              mb="15%"
+            />
+          )}
         </Flex>
       </Flex>
     </Flex>
