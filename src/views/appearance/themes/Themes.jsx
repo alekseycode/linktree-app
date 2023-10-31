@@ -1,5 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import ThemesItem from "./ThemesItem";
+import { Link } from "react-scroll";
 
 const Themes = () => {
   return (
@@ -10,21 +11,29 @@ const Themes = () => {
       <Flex flexDir="column" bg="gray.700" borderRadius="30px">
         <Flex my="28px" mx="16px" justifyContent="space-evenly">
           <Flex flexDir="column" alignItems="center">
-            <Flex
-              h="200px"
-              w="128px"
-              border="dotted"
-              borderRadius="10px"
-              cursor="pointer"
-              textAlign="center"
-              alignItems="center"
-              fontSize="20px"
-              lineHeight="1.25"
-              px="10px"
-              mb="10px"
+            <Link
+              to="custom"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-100}
             >
-              CREATE YOUR OWN
-            </Flex>
+              <Flex
+                h="200px"
+                w="128px"
+                border="dotted"
+                borderRadius="10px"
+                cursor="pointer"
+                textAlign="center"
+                alignItems="center"
+                fontSize="20px"
+                lineHeight="1.25"
+                px="10px"
+                mb="10px"
+              >
+                CREATE YOUR OWN
+              </Flex>
+            </Link>
             <Text>Custom</Text>
           </Flex>
           <ThemesItem
