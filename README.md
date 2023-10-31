@@ -9,7 +9,7 @@ Welcome to the LinkTree Clone App, a simple web application built in React that 
 - Customize the appearance of your links.
 - Share your profile link with others, making it easier for them to connect with you online.
 
-## Prerequisites
+## Cloning Repo Instructions
 
 Before you get started with the LinkTree Clone App, make sure you have the following installed:
 
