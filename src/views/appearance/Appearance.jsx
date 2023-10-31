@@ -57,7 +57,7 @@ const Appearance = () => {
 
       <Themes />
 
-      <CustomAppearance />
+      <CustomAppearance name="custom" />
 
       <Backgrounds
         styles={styles}

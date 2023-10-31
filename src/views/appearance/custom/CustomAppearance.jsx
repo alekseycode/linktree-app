@@ -1,9 +1,9 @@
 import { Text } from "@chakra-ui/react";
 
-const CustomAppearance = () => {
+const CustomAppearance = ({ name }) => {
   return (
     <>
-      <Text mt="48px" fontSize="1.4rem">
+      <Text name={name} mt="48px" fontSize="1.4rem">
         Custom Appearance
       </Text>
       <Text mt="18px" fontSize="1rem" maxW="600px">
