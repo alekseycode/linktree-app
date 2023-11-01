@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import ThemesItem from "./ThemesItem";
 import { Link } from "react-scroll";
 
@@ -9,8 +9,8 @@ const Themes = () => {
         Themes
       </Text>
       <Flex flexDir="column" bg="gray.700" borderRadius="30px">
-        <Flex my="28px" mx="16px" justifyContent="space-evenly">
-          <Flex flexDir="column" alignItems="center">
+        <Grid templateColumns="repeat(4, 1fr)" gap={4} my="6%" mx="2%">
+          <GridItem textAlign="center">
             <Link
               to="custom"
               spy={true}
@@ -28,14 +28,14 @@ const Themes = () => {
                 alignItems="center"
                 fontSize="20px"
                 lineHeight="1.25"
-                px="10px"
+                px="12px"
                 mb="10px"
               >
                 CREATE YOUR OWN
               </Flex>
             </Link>
             <Text>Custom</Text>
-          </Flex>
+          </GridItem>
           <ThemesItem
             onClick={() => console.log("clicked")}
             description="Linktree x Olivia Rodrigo"
@@ -49,7 +49,7 @@ const Themes = () => {
             description="Halloween '23"
             imageSRC="https://mfe-appearance.production.linktr.ee/images/selector-halloween-2023.c329d62fcebabf650686.webp"
           />
-        </Flex>
+        </Grid>
       </Flex>
     </>
   );
