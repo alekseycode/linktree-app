@@ -37,6 +37,7 @@ const Themes = () => {
             <Text>Custom</Text>
           </Flex>
           <ThemesItem
+            onClick={() => console.log("clicked")}
             description="Linktree x Olivia Rodrigo"
             imageSRC="https://mfe-appearance.production.linktr.ee/images/selector-olivia-rodrigo-guts.bce5704bb397972aa4c6.webp"
           />
