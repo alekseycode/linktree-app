@@ -1,8 +1,11 @@
 import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import ThemesItem from "./ThemesItem";
 import { Link } from "react-scroll";
+import watermelonJoyTheme from "../../../images/watermelon-joy2.png";
+import cyberDarkTheme from "../../../images/cyber-dark2.png";
+import coolBreezeTheme from "../../../images/cool-breeze-blue.png";
 
-const Themes = () => {
+const Themes = ({ updateTheme }) => {
   return (
     <>
       <Text mt="48px" mb="16px" fontSize="1.4rem">
@@ -30,6 +33,17 @@ const Themes = () => {
                 lineHeight="1.25"
                 px="12px"
                 mb="10px"
+                onClick={() =>
+                  updateTheme({
+                    bgColor: "gray.800",
+                    shape: "0px",
+                    variantColor: "",
+                    shadow: "",
+                    shadowColor: "",
+                    buttonFontColor: "white",
+                    showLogo: true,
+                  })
+                }
               >
                 CREATE YOUR OWN
               </Flex>
@@ -37,17 +51,49 @@ const Themes = () => {
             <Text>Custom</Text>
           </GridItem>
           <ThemesItem
-            onClick={() => console.log("clicked")}
-            description="Linktree x Olivia Rodrigo"
-            imageSRC="https://mfe-appearance.production.linktr.ee/images/selector-olivia-rodrigo-guts.bce5704bb397972aa4c6.webp"
+            description="Watermelon Joy"
+            imageSRC={watermelonJoyTheme}
+            onClick={() =>
+              updateTheme({
+                bgColor: "#1f795d",
+                shape: "0px",
+                variantColor: "#bc4343",
+                shadow: "",
+                shadowColor: "#353535",
+                buttonFontColor: "white",
+                showLogo: true,
+              })
+            }
           />
           <ThemesItem
-            description="Linktree x Olivia Rodrigo (Dark)"
-            imageSRC="https://mfe-appearance.production.linktr.ee/images/selector-olivia-rodrigo-guts-v2.48846b855e65ab113f62.webp"
+            description="Cyber-Dark"
+            imageSRC={cyberDarkTheme}
+            onClick={() =>
+              updateTheme({
+                bgColor: "black",
+                shape: "0px",
+                variantColor: "black",
+                shadow: "5px 5px 5px",
+                shadowColor: "#96ff84",
+                buttonFontColor: "#96ff84",
+                showLogo: false,
+              })
+            }
           />
           <ThemesItem
-            description="Halloween '23"
-            imageSRC="https://mfe-appearance.production.linktr.ee/images/selector-halloween-2023.c329d62fcebabf650686.webp"
+            description="Cool Breeze Blue"
+            imageSRC={coolBreezeTheme}
+            onClick={() =>
+              updateTheme({
+                bgColor: "#35bbbe",
+                shape: "10px",
+                variantColor: "#35bbbe",
+                shadow: "0px 2px 2px",
+                shadowColor: "black",
+                buttonFontColor: "white",
+                showLogo: true,
+              })
+            }
           />
         </Grid>
       </Flex>

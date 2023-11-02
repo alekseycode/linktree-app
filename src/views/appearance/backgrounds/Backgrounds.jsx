@@ -16,7 +16,7 @@ const Backgrounds = ({ styles, updateStyle, updateDesign }) => {
             onClick={() => updateDesign("bgColor", styles.bgColor)}
           />
           <BackgroundItem
-            option="Gradient"
+            option="Transparent"
             border="solid"
             onClick={() => updateDesign("bgColor", "gray.800")}
           />

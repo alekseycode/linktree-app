@@ -4,7 +4,12 @@ const ThemesItem = ({ description, imageSRC, onClick }) => {
   return (
     <GridItem flexDir="column" alignItems="center" onClick={onClick}>
       <Flex h="200px" w="128px" mb="10px" cursor="pointer">
-        <Image borderRadius="10px" src={imageSRC} name="backgroundTheme" />
+        <Image
+          w="200px"
+          borderRadius="10px"
+          src={imageSRC}
+          name="backgroundTheme"
+        />
       </Flex>
       <Text w="128px" textAlign="center">
         {description}
