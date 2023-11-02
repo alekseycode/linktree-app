@@ -51,11 +51,18 @@ const Appearance = () => {
     }));
   };
 
+  const updateTheme = (theme) => {
+    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+      ...cache,
+      ...theme,
+    }));
+  };
+
   return (
     <Flex flexDir="column" ml="30px" flexGrow="1" maxW="70%">
       <Profile title={title} bio={bio} updateDesign={updateDesign} />
 
-      <Themes />
+      <Themes updateTheme={updateTheme} />
 
       <CustomAppearance name="custom" />
 
