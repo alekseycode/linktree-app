@@ -12,7 +12,13 @@ const Themes = ({ updateTheme }) => {
         Themes
       </Text>
       <Flex flexDir="column" bg="gray.700" borderRadius="30px">
-        <Grid templateColumns="repeat(4, 1fr)" gap={4} my="6%" mx="2%">
+        <Grid
+          templateColumns="repeat(4, 1fr)"
+          gap={4}
+          my="6%"
+          mx="2%"
+          justifyItems="center"
+        >
           <GridItem textAlign="center">
             <Link
               to="custom"
