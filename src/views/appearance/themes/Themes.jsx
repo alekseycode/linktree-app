@@ -45,7 +45,7 @@ const Themes = ({ updateTheme }) => {
                     shape: "0px",
                     variantColor: "",
                     shadow: "",
-                    shadowColor: "",
+                    shadowColor: "black",
                     buttonFontColor: "white",
                     showLogo: true,
                   })
