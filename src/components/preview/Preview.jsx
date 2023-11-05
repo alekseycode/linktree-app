@@ -31,7 +31,7 @@ const Preview = () => {
           border="solid"
           borderRadius="20px"
           w="18%"
-          h="64%"
+          minH="64%"
           maxW="300px"
           position="fixed"
           flexDirection="column"
@@ -79,7 +79,8 @@ const Preview = () => {
               w="30%"
               src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
               mx="auto"
-              mb="15%"
+              mt="15%"
+              mb="10%"
             />
           )}
         </Flex>
