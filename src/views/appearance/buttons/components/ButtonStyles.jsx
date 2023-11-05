@@ -92,6 +92,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
           onClick={() => {
             updateStyle("shadow", SHADOW_SOFT);
             updateDesign("shadow", "0px 3px 3px");
+            updateDesign("shadowColor", styles.shadowColor);
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_SOFT}
@@ -102,6 +103,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
           onClick={() => {
             updateStyle("shadow", SHADOW_HARD);
             updateDesign("shadow", "6px 6px 6px");
+            updateDesign("shadowColor", styles.shadowColor);
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_HARD}
