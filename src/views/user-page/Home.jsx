@@ -2,7 +2,7 @@ import { Avatar, Button, Flex, Image, Text } from "@chakra-ui/react";
 
 function Home() {
   return (
-    <Flex mt="10%" flexDir="column">
+    <Flex mt="8%" flexDir="column">
       <Text mb="40px" textAlign="center" fontSize="2rem">
         Customize your personal link page
       </Text>
