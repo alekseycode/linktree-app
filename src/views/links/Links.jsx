@@ -11,8 +11,8 @@ const Links = () => {
   const queryClient = useQueryClient();
   const [showAddLink, setShowAddLink] = useState(false);
 
-  const { design, isLoading, isError, isSuccess } = useDesign(1);
-  const { name, title, desc, imgUrl, links = [], socials = [] } = design || {};
+  const { design } = useDesign(1);
+  const { links = [] } = design || {};
 
   const createLinkItem = (link) => {
     queryClient.setQueryData([DESIGN, 1], (cache) => ({

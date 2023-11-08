@@ -1,8 +1,6 @@
 import {
-  Box,
   Flex,
   Icon,
-  Input,
   Menu,
   MenuButton,
   MenuItem,

@@ -1,7 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import ButtonStyles from "./components/ButtonStyles";
 import ButtonColors from "./components/ButtonColors";
-import { BG_NONE } from "../../../constants/constants";
 
 const Buttons = ({ styles, updateStyle, updateDesign }) => {
   return (
