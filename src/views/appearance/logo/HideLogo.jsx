@@ -18,7 +18,7 @@ const HideLogo = ({ updateDesign }) => {
           name="hide logo"
           onChange={() => {
             setShowLogo((prev) => !prev);
-            updateDesign("showLogo", showLogo);
+            updateDesign({ showLogo: showLogo });
           }}
         />
       </Flex>

@@ -17,11 +17,11 @@ const ButtonColors = ({ styles, updateStyle, updateDesign }) => {
                 "buttonColor",
                 val !== "#" ? val : styles.buttonColor
               );
-              updateDesign("variantColor", val);
+              updateDesign({ variantColor: val });
             }
           }}
           inputVal={styles.buttonColor}
-          onBlur={() => updateDesign("variantColor", styles.buttonColor)}
+          onBlur={() => updateDesign({ variantColor: styles.buttonColor })}
         />
       )}
       <ColorPicker
@@ -35,11 +35,11 @@ const ButtonColors = ({ styles, updateStyle, updateDesign }) => {
               "buttonFontColor",
               val !== "#" ? val : styles.buttonFontColor
             );
-            updateDesign("buttonFontColor", val);
+            updateDesign({ buttonFontColor: val });
           }
         }}
         inputVal={styles.buttonFontColor}
-        onBlur={() => updateDesign("buttonFontColor", styles.buttonFontColor)}
+        onBlur={() => updateDesign({ buttonFontColor: styles.buttonFontColor })}
       />
       {styles.shadow && (
         <ColorPicker
@@ -53,11 +53,11 @@ const ButtonColors = ({ styles, updateStyle, updateDesign }) => {
                 "shadowColor",
                 val !== "#" ? val : styles.shadowColor
               );
-              updateDesign("shadowColor", val);
+              updateDesign({ shadowColor: val });
             }
           }}
           inputVal={styles.shadowColor}
-          onBlur={() => updateDesign("shadowColor", styles.shadowColor)}
+          onBlur={() => updateDesign({ shadowColor: styles.shadowColor })}
         />
       )}
     </>

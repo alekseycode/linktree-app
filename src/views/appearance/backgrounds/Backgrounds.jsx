@@ -13,12 +13,12 @@ const Backgrounds = ({ styles, updateStyle, updateDesign }) => {
           <BackgroundItem
             option="Flat Color"
             background={styles.bgColor}
-            onClick={() => updateDesign("bgColor", styles.bgColor)}
+            onClick={() => updateDesign({ bgColor: styles.bgColor })}
           />
           <BackgroundItem
             option="Transparent"
             border="solid"
-            onClick={() => updateDesign("bgColor", "gray.800")}
+            onClick={() => updateDesign({ bgColor: "gray.800" })}
           />
           <BackgroundItem option="Image" border="dotted" />
           <BackgroundItem option="Video" border="dotted" />
@@ -32,11 +32,11 @@ const Backgrounds = ({ styles, updateStyle, updateDesign }) => {
               const val = e.target.value;
               if (e.key === "Enter" && val) {
                 updateStyle("bgColor", val !== "#" ? val : styles.bgColor);
-                updateDesign("bgColor", val);
+                updateDesign({ bgColor: val });
               }
             }}
             inputVal={styles.bgColor}
-            onBlur={() => updateDesign("bgColor", styles.bgColor)}
+            onBlur={() => updateDesign({ bgColor: styles.bgColor })}
           />
         </Flex>
       </Flex>
