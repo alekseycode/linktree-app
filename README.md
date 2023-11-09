@@ -1,6 +1,6 @@
-# LinkTree Clone App (React)
+# Linkfree App (React)
 
-Welcome to the LinkTree Clone App, a simple web application built in React that allows users to create a customizable page with links to their social media profiles, websites, and other online content. This README will guide you through setting up and using the app.
+Welcome to the Linkfree App, a simple web application built in React that allows users to create a customizable page with links to their social media profiles, websites, and other online content. This README will guide you through setting up and using the app.
 
 ## Features
 
@@ -11,7 +11,7 @@ Welcome to the LinkTree Clone App, a simple web application built in React that 
 
 ## Cloning Repo Instructions
 
-Before you get started with the LinkTree Clone App, make sure you have the following installed:
+Before you get started with the Linkfree App, make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) - The runtime environment for running the React application.
 - [npm](https://www.npmjs.com/) - The package manager for managing dependencies.
@@ -38,7 +38,7 @@ npm install
 
 ## Usage
 
-Once you've configured your LinkTree Clone App, you can start the development server:
+Once you've configured your Linkfree App, you can start the development server:
 
 ```bash
 npm run dev
@@ -60,4 +60,4 @@ If you encounter any issues or have questions, please feel free to open an issue
 
 ## Acknowledgments
 
-This LinkTree Clone App was created with React and open-source libraries and tools.
+This Linkfree App was created with React and open-source libraries and tools.
