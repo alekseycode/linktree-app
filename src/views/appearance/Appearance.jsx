@@ -44,17 +44,10 @@ const Appearance = () => {
     }));
   };
 
-  const updateDesign = (prop, value) => {
+  const updateDesign = (design) => {
     queryClient.setQueryData([DESIGN, 1], (cache) => ({
       ...cache,
-      [prop]: value,
-    }));
-  };
-
-  const updateTheme = (theme) => {
-    queryClient.setQueryData([DESIGN, 1], (cache) => ({
-      ...cache,
-      ...theme,
+      ...design,
     }));
   };
 
@@ -62,7 +55,7 @@ const Appearance = () => {
     <Flex flexDir="column" ml="30px" flexGrow="1" maxW="70%">
       <Profile title={title} bio={bio} updateDesign={updateDesign} />
 
-      <Themes updateTheme={updateTheme} />
+      <Themes updateDesign={updateDesign} />
 
       <CustomAppearance name="custom" />
 

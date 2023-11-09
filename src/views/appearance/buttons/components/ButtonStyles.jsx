@@ -30,7 +30,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
           borderRadius={borderRadiusVariants[SHAPE_SQUARE]}
           onClick={() => {
             updateStyle("shape", SHAPE_SQUARE);
-            updateDesign("shape", borderRadiusVariants[SHAPE_SQUARE]);
+            updateDesign({ shape: borderRadiusVariants[SHAPE_SQUARE] });
           }}
           isActive={styles.shape === SHAPE_SQUARE}
         />
@@ -39,7 +39,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
           borderRadius={borderRadiusVariants[SHAPE_ROUNDED]}
           onClick={() => {
             updateStyle("shape", SHAPE_ROUNDED);
-            updateDesign("shape", borderRadiusVariants[SHAPE_ROUNDED]);
+            updateDesign({ shape: borderRadiusVariants[SHAPE_ROUNDED] });
           }}
           isActive={styles.shape === SHAPE_ROUNDED}
         />
@@ -48,7 +48,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
           borderRadius={borderRadiusVariants[SHAPE_CIRCLE]}
           onClick={() => {
             updateStyle("shape", SHAPE_CIRCLE);
-            updateDesign("shape", borderRadiusVariants[SHAPE_CIRCLE]);
+            updateDesign({ shape: borderRadiusVariants[SHAPE_CIRCLE] });
           }}
           isActive={styles.shape === SHAPE_CIRCLE}
         />
@@ -60,7 +60,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
         <ButtonItem
           onClick={() => {
             updateStyle("variant", BG_NONE);
-            updateDesign("variantColor", "");
+            updateDesign({ variantColor: "" });
           }}
           isActive={styles.variant === BG_NONE}
           borderRadius={borderRadius}
@@ -69,7 +69,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
           background={styles.buttonColor}
           onClick={() => {
             updateStyle("variant", BG_FILL);
-            updateDesign("variantColor", styles.buttonColor);
+            updateDesign({ variantColor: styles.buttonColor });
           }}
           isActive={styles.variant === BG_FILL}
           borderRadius={borderRadius}
@@ -82,7 +82,7 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
         <ButtonItem
           onClick={() => {
             updateStyle("shadow", null);
-            updateDesign("shadow", "");
+            updateDesign({ shadow: "" });
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === null}
@@ -91,8 +91,10 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
         <ButtonItem
           onClick={() => {
             updateStyle("shadow", SHADOW_SOFT);
-            updateDesign("shadow", "0px 3px 3px");
-            updateDesign("shadowColor", styles.shadowColor);
+            updateDesign({
+              shadow: "0px 3px 3px",
+              shadowColor: styles.shadowColor,
+            });
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_SOFT}
@@ -102,8 +104,10 @@ const ButtonStyles = ({ styles, updateStyle, updateDesign }) => {
         <ButtonItem
           onClick={() => {
             updateStyle("shadow", SHADOW_HARD);
-            updateDesign("shadow", "6px 6px 6px");
-            updateDesign("shadowColor", styles.shadowColor);
+            updateDesign({
+              shadow: "6px 6px 6px",
+              shadowColor: styles.shadowColor,
+            });
           }}
           borderRadius={borderRadius}
           isActive={styles.shadow === SHADOW_HARD}

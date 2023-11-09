@@ -5,7 +5,7 @@ import watermelonJoyTheme from "../../../images/watermelon-joy2.png";
 import cyberDarkTheme from "../../../images/cyber-dark2.png";
 import coolBreezeTheme from "../../../images/cool-breeze-blue.png";
 
-const Themes = ({ updateTheme }) => {
+const Themes = ({ updateDesign }) => {
   return (
     <>
       <Text mt="48px" mb="16px" fontSize="1.4rem">
@@ -40,7 +40,7 @@ const Themes = ({ updateTheme }) => {
                 px="12px"
                 mb="10px"
                 onClick={() =>
-                  updateTheme({
+                  updateDesign({
                     bgColor: "gray.800",
                     shape: "0px",
                     variantColor: "",
@@ -60,7 +60,7 @@ const Themes = ({ updateTheme }) => {
             description="Watermelon Joy"
             imageSRC={watermelonJoyTheme}
             onClick={() =>
-              updateTheme({
+              updateDesign({
                 bgColor: "#1f795d",
                 shape: "0px",
                 variantColor: "#bc4343",
@@ -75,7 +75,7 @@ const Themes = ({ updateTheme }) => {
             description="Cyber-Dark"
             imageSRC={cyberDarkTheme}
             onClick={() =>
-              updateTheme({
+              updateDesign({
                 bgColor: "black",
                 shape: "0px",
                 variantColor: "black",
@@ -90,7 +90,7 @@ const Themes = ({ updateTheme }) => {
             description="Cool Breeze Blue"
             imageSRC={coolBreezeTheme}
             onClick={() =>
-              updateTheme({
+              updateDesign({
                 bgColor: "#35bbbe",
                 shape: "10px",
                 variantColor: "#35bbbe",
