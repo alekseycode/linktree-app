@@ -46,10 +46,18 @@ const Fonts = ({ styles, updateStyle, updateDesign }) => {
             <MenuItem onClick={() => updateDesign({ font: "Agbalumo" })}>
               Agbalumo
             </MenuItem>
-            <MenuItem>Bitter</MenuItem>
-            <MenuItem>Calistoga</MenuItem>
-            <MenuItem>Crimson Text</MenuItem>
-            <MenuItem>EB Garamond</MenuItem>
+            <MenuItem onClick={() => updateDesign({ font: "Kenia" })}>
+              Kenia
+            </MenuItem>
+            <MenuItem onClick={() => updateDesign({ font: "Dancing Script" })}>
+              Dancing Script
+            </MenuItem>
+            <MenuItem onClick={() => updateDesign({ font: "Crimson Text" })}>
+              Crimson Text
+            </MenuItem>
+            <MenuItem onClick={() => updateDesign({ font: "Linefont" })}>
+              Linefont
+            </MenuItem>
           </MenuList>
         </Menu>
         <ColorPicker
