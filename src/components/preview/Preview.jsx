@@ -17,6 +17,7 @@ const Preview = () => {
     shadowColor,
     buttonFontColor,
     showLogo,
+    font,
   } = design || {};
 
   return (
@@ -37,6 +38,7 @@ const Preview = () => {
           flexDirection="column"
           justifyContent="space-between"
           bg={bgColor}
+          fontFamily={font}
         >
           <Flex flexDir="column">
             <Flex flexDir="column">

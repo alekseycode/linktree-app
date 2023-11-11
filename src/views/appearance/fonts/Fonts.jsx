@@ -11,7 +11,7 @@ import {
 import ChevronDownIcon from "../../../icons/ChevronDownIcon";
 import ColorPicker from "../buttons/items/ColorPicker";
 
-const Fonts = ({ styles, updateStyle }) => {
+const Fonts = ({ styles, updateStyle, updateDesign }) => {
   return (
     <>
       <Text mt="48px" mb="16px" fontSize="1.4rem">
@@ -40,7 +40,12 @@ const Fonts = ({ styles, updateStyle }) => {
             Arvo
           </MenuButton>
           <MenuList>
-            <MenuItem>Arvo</MenuItem>
+            <MenuItem onClick={() => updateDesign({ font: "Arvo" })}>
+              Arvo
+            </MenuItem>
+            <MenuItem onClick={() => updateDesign({ font: "Agbalumo" })}>
+              Agbalumo
+            </MenuItem>
             <MenuItem>Bitter</MenuItem>
             <MenuItem>Calistoga</MenuItem>
             <MenuItem>Crimson Text</MenuItem>

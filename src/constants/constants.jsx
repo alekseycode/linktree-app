@@ -15,3 +15,4 @@ export const BUTTON_FONT_COLOR = "white";
 export const SHADOW_COLOR = "black";
 
 export const FONT_COLOR = "white";
+export const FONT = "arial";

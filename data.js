@@ -6,6 +6,7 @@ const DESIGN = {
   bio: "elite junior dev",
   imgURL: "https://bit.ly/dan-abramov",
   bgColor: "gray.800",
+  font: "Arvo",
   shape: "0px",
   variantColor: "",
   shadow: "",
