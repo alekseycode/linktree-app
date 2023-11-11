@@ -10,8 +10,10 @@ import {
 } from "@chakra-ui/react";
 import ChevronDownIcon from "../../../icons/ChevronDownIcon";
 import ColorPicker from "../buttons/items/ColorPicker";
+import { useState } from "react";
 
 const Fonts = ({ styles, updateStyle, updateDesign }) => {
+  const [font, setFont] = useState("Arvo");
   return (
     <>
       <Text mt="48px" mb="16px" fontSize="1.4rem">
@@ -37,19 +39,57 @@ const Fonts = ({ styles, updateStyle, updateDesign }) => {
               <Icon w="10px" h="10px" color="white" as={ChevronDownIcon} />
             }
           >
-            Arvo
+            {font}
           </MenuButton>
           <MenuList>
-            <MenuItem onClick={() => updateDesign({ font: "Arvo" })}>
+            <MenuItem
+              onClick={() => {
+                updateDesign({ font: "Arvo" });
+                setFont("Arvo");
+              }}
+            >
               Arvo
             </MenuItem>
-            <MenuItem onClick={() => updateDesign({ font: "Agbalumo" })}>
+            <MenuItem
+              onClick={() => {
+                updateDesign({ font: "Agbalumo" });
+                setFont("Agbalumo");
+              }}
+            >
               Agbalumo
             </MenuItem>
-            <MenuItem>Bitter</MenuItem>
-            <MenuItem>Calistoga</MenuItem>
-            <MenuItem>Crimson Text</MenuItem>
-            <MenuItem>EB Garamond</MenuItem>
+            <MenuItem
+              onClick={() => {
+                updateDesign({ font: "Kenia" });
+                setFont("Kenia");
+              }}
+            >
+              Kenia
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                updateDesign({ font: "Dancing Script" });
+                setFont("Dancing Script");
+              }}
+            >
+              Dancing Script
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                updateDesign({ font: "Crimson Text" });
+                setFont("Crimson Text");
+              }}
+            >
+              Crimson Text
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                updateDesign({ font: "Linefont" });
+                setFont("Linefont");
+              }}
+            >
+              Linefont
+            </MenuItem>
           </MenuList>
         </Menu>
         <ColorPicker
