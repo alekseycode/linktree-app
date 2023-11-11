@@ -9,6 +9,7 @@ import {
   BG_COLOR,
   BUTTON_FONT_COLOR,
   FONT_COLOR,
+  FONT,
 } from "../../constants/constants";
 import Backgrounds from "./backgrounds/Backgrounds";
 import Themes from "./themes/Themes";
@@ -35,6 +36,7 @@ const Appearance = () => {
     shadowColor: SHADOW_COLOR,
     bgColor: BG_COLOR,
     fontColor: FONT_COLOR,
+    font: FONT,
   });
 
   const updateStyle = (prop, value) => {
@@ -71,7 +73,11 @@ const Appearance = () => {
         updateDesign={updateDesign}
       />
 
-      <Fonts styles={styles} updateStyle={updateStyle} />
+      <Fonts
+        styles={styles}
+        updateStyle={updateStyle}
+        updateDesign={updateDesign}
+      />
 
       <HideLogo updateDesign={updateDesign} />
     </Flex>
