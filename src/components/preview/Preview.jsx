@@ -18,6 +18,7 @@ const Preview = () => {
     buttonFontColor,
     showLogo,
     font,
+    fontColor,
   } = design || {};
 
   return (
@@ -51,12 +52,14 @@ const Preview = () => {
                 w="80px"
                 h="80px"
               />
-              <Text mx="auto" fontSize="1.2rem" mb="3%">
-                {"@" + title}
-              </Text>
-              <Text mx="auto" mb="8%" maxW="80%" textAlign="center">
-                {bio}
-              </Text>
+              <Flex flexDir="column" color={fontColor}>
+                <Text mx="auto" fontSize="1.2rem" mb="3%">
+                  {"@" + title}
+                </Text>
+                <Text mx="auto" mb="8%" maxW="80%" textAlign="center">
+                  {bio}
+                </Text>
+              </Flex>
             </Flex>
 
             <Flex flexDir="column-reverse">
