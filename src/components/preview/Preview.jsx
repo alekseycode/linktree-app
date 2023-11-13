@@ -2,6 +2,7 @@ import { Avatar, Flex, Image, Text } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import useDesign from "../../hooks/useDesign";
 import PreviewLink from "./PreviewLink";
+import linkTreeLogo from "../../assets/images/linktree-logo.svg";
 
 const Preview = () => {
   const { design } = useDesign(1);
@@ -80,13 +81,7 @@ const Preview = () => {
           </Flex>
 
           {showLogo && (
-            <Image
-              w="30%"
-              src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
-              mx="auto"
-              mt="15%"
-              mb="10%"
-            />
+            <Image w="30%" src={linkTreeLogo} mx="auto" mt="15%" mb="10%" />
           )}
         </Flex>
       </Flex>

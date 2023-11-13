@@ -1,5 +1,6 @@
 import { Flex, Image, Switch, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import linkTreeLogo from "../../../assets/images/linktree-logo.svg";
 
 const HideLogo = ({ updateDesign }) => {
   const [showLogo, setShowLogo] = useState(false);
@@ -22,12 +23,7 @@ const HideLogo = ({ updateDesign }) => {
           }}
         />
       </Flex>
-      <Image
-        w="110px"
-        h="70px"
-        src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
-        name="linktree logo"
-      />
+      <Image w="110px" h="70px" src={linkTreeLogo} name="linktree logo" />
     </Flex>
   );
 };
