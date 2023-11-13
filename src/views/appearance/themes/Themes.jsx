@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import watermelonJoyTheme from "../../../images/watermelon-joy2.png";
 import cyberDarkTheme from "../../../images/cyber-dark2.png";
 import coolBreezeTheme from "../../../images/cool-breeze-blue.png";
+import bubblegumTheme from "../../../images/bubblegum.png";
 
 const Themes = ({ updateDesign }) => {
   return (
@@ -95,6 +96,21 @@ const Themes = ({ updateDesign }) => {
                 shape: "10px",
                 variantColor: "#35bbbe",
                 shadow: "0px 2px 2px",
+                shadowColor: "black",
+                buttonFontColor: "white",
+                showLogo: true,
+              })
+            }
+          />
+          <ThemesItem
+            description="Bubblegum"
+            imageSRC={bubblegumTheme}
+            onClick={() =>
+              updateDesign({
+                bgColor: "#df8585",
+                shape: "10px",
+                variantColor: "#33d2a7",
+                shadow: "5px 5px 5px",
                 shadowColor: "black",
                 buttonFontColor: "white",
                 showLogo: true,
