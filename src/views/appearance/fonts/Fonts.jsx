@@ -103,6 +103,7 @@ const Fonts = ({ styles, updateStyle, updateDesign }) => {
             }
           }}
           inputVal={styles.fontColor}
+          onBlur={() => updateDesign({ fontColor: styles.fontColor })}
         />
       </Flex>
     </>

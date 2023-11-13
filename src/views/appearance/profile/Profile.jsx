@@ -57,7 +57,7 @@ const Profile = ({ title, bio, updateDesign }) => {
             mb="10px"
             name="profileTitle"
             onKeyDown={(e) => e.key === "Enter" && titleRef.current.blur()}
-            onBlur={(e) => updateDesign("title", e.target.value)}
+            onBlur={(e) => updateDesign({ title: e.target.value })}
           />
           <Textarea
             ref={bioRef}
@@ -67,7 +67,7 @@ const Profile = ({ title, bio, updateDesign }) => {
             onKeyDown={(e) => e.key === "Enter" && bioRef.current.blur()}
             onBlur={(e) => {
               bioLength > MAX_BIO ? setDisclaimer(true) : setDisclaimer(false);
-              bioLength <= MAX_BIO && updateDesign("bio", e.target.value);
+              bioLength <= MAX_BIO && updateDesign({ bio: e.target.value });
             }}
             onChange={(e) => setBioLength(e.target.value.length)}
           />
