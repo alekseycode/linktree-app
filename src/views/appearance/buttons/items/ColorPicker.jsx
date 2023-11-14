@@ -7,6 +7,8 @@ import {
   PopoverTrigger,
   Text,
 } from "@chakra-ui/react";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChromePicker } from "react-color";
 
 const ColorPicker = ({
@@ -17,13 +19,22 @@ const ColorPicker = ({
   inputVal,
   onBlur,
 }) => {
+  const handleCopyClick = () => {
+    const input = document.createElement("input");
+    input.value = inputVal;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+  };
+
   return (
     <>
       <Text ml="18px" fontWeight="600" mb="10px">
         {heading}
       </Text>
 
-      <Flex ml="18px" mb="28px">
+      <Flex ml="18px" mb="28px" alignItems="center">
         <Popover>
           <PopoverTrigger>
             <Box
@@ -47,7 +58,12 @@ const ColorPicker = ({
           w="30%"
           onKeyDown={onKeyDown}
           name="colorPicker"
+          mr="20px"
         />
+
+        <Box cursor="pointer" onClick={() => handleCopyClick()}>
+          <FontAwesomeIcon icon={faCopy} />
+        </Box>
       </Flex>
     </>
   );
