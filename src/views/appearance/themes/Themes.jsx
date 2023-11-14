@@ -1,10 +1,10 @@
 import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import ThemesItem from "./ThemesItem";
 import { Link } from "react-scroll";
-import watermelonJoyTheme from "../../../images/watermelon-joy2.png";
-import cyberDarkTheme from "../../../images/cyber-dark2.png";
-import coolBreezeTheme from "../../../images/cool-breeze-blue.png";
-import bubblegumTheme from "../../../images/bubblegum.png";
+import watermelonJoyTheme from "../../../assets/images/watermelon-joy2.png";
+import cyberDarkTheme from "../../../assets/images/cyber-dark2.png";
+import coolBreezeTheme from "../../../assets/images/cool-breeze-blue.png";
+import bubblegumTheme from "../../../assets/images/bubblegum.png";
 
 const Themes = ({ updateDesign }) => {
   return (
