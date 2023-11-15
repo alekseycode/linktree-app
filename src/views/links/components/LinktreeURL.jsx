@@ -4,20 +4,16 @@ import React, { useRef } from "react";
 const LinktreeURL = () => {
   const linkRef = useRef(null);
 
-  const handleCopyClick = () => {
-    // Select the text within the link
-    const range = document.createRange();
-    range.selectNode(linkRef.current);
+  const handleCopyClick = async () => {
+    try {
+      // Get the text content from the reference
+      const textToCopy = linkRef.current.textContent;
 
-    const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-
-    // Copy the selected text to the clipboard
-    document.execCommand("copy");
-
-    // Deselect the text
-    selection.removeAllRanges();
+      // Use the Async Clipboard API to copy the text
+      await navigator.clipboard.writeText(textToCopy);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
   };
 
   return (

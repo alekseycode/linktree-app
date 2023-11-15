@@ -19,13 +19,12 @@ const ColorPicker = ({
   inputVal,
   onBlur,
 }) => {
-  const handleCopyClick = () => {
-    const input = document.createElement("input");
-    input.value = inputVal;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand("copy");
-    document.body.removeChild(input);
+  const handleCopyClick = async () => {
+    try {
+      await navigator.clipboard.writeText(inputVal);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
   };
 
   return (
