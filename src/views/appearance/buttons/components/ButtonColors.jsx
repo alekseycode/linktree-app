@@ -5,6 +5,23 @@ import { BG_NONE } from "../../../../constants/constants";
 const ButtonColors = ({ styles, updateStyle, updateDesign }) => {
   return (
     <>
+      <ColorPicker
+        heading="Button font color"
+        background={styles.buttonFontColor}
+        onChange={(color) => updateStyle("buttonFontColor", color.hex)}
+        onKeyDown={(e) => {
+          const val = e.target.value;
+          if (e.key === "Enter" && val) {
+            updateStyle(
+              "buttonFontColor",
+              val !== "#" ? val : styles.buttonFontColor
+            );
+            updateDesign({ buttonFontColor: val });
+          }
+        }}
+        inputVal={styles.buttonFontColor}
+        onBlur={() => updateDesign({ buttonFontColor: styles.buttonFontColor })}
+      />
       {styles.variant !== BG_NONE && (
         <ColorPicker
           heading="Button color"
@@ -24,23 +41,6 @@ const ButtonColors = ({ styles, updateStyle, updateDesign }) => {
           onBlur={() => updateDesign({ variantColor: styles.buttonColor })}
         />
       )}
-      <ColorPicker
-        heading="Button font color"
-        background={styles.buttonFontColor}
-        onChange={(color) => updateStyle("buttonFontColor", color.hex)}
-        onKeyDown={(e) => {
-          const val = e.target.value;
-          if (e.key === "Enter" && val) {
-            updateStyle(
-              "buttonFontColor",
-              val !== "#" ? val : styles.buttonFontColor
-            );
-            updateDesign({ buttonFontColor: val });
-          }
-        }}
-        inputVal={styles.buttonFontColor}
-        onBlur={() => updateDesign({ buttonFontColor: styles.buttonFontColor })}
-      />
       {styles.shadow && (
         <ColorPicker
           heading="Shadow color"
