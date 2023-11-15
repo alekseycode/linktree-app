@@ -100,6 +100,7 @@ const Fonts = ({ styles, updateStyle, updateDesign }) => {
             const val = e.target.value;
             if (e.key === "Enter" && val) {
               updateStyle("fontColor", val !== "#" ? val : styles.fontColor);
+              updateDesign({ fontColor: val });
             }
           }}
           inputVal={styles.fontColor}
