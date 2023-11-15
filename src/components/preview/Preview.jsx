@@ -33,7 +33,7 @@ const Preview = () => {
         <Flex
           border="solid"
           borderRadius="20px"
-          w="18%"
+          w="28%"
           minH="64%"
           maxW="300px"
           position="fixed"
