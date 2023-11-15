@@ -122,7 +122,7 @@ const Themes = ({ updateDesign }) => {
                 bgColor: "#df8585",
                 shape: "10px",
                 variantColor: "#33d2a7",
-                shadow: "5px 5px 5px",
+                shadow: "8px 8px 8px",
                 shadowColor: "black",
                 buttonFontColor: "white",
                 fontColor: "white",
@@ -135,13 +135,13 @@ const Themes = ({ updateDesign }) => {
             shadow="5px 5px 5px"
             shadowColor="black"
             description="Spongebob"
-            shape=""
+            shape="0px"
             onClick={() =>
               updateDesign({
                 bgColor: "#FFDB58",
-                shape: "10px",
+                shape: "0px",
                 variantColor: "#0093ff",
-                shadow: "5px 5px 5px",
+                shadow: "8px 8px 8px",
                 shadowColor: "black",
                 buttonFontColor: "white",
                 fontColor: "white",
