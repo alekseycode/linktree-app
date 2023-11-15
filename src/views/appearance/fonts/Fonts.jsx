@@ -99,7 +99,7 @@ const Fonts = ({ styles, updateStyle, updateDesign }) => {
           onKeyDown={(e) => {
             const val = e.target.value;
             if (e.key === "Enter" && val) {
-              updateStyle("bgColor", val !== "#" ? val : styles.fontColor);
+              updateStyle("fontColor", val !== "#" ? val : styles.fontColor);
             }
           }}
           inputVal={styles.fontColor}
