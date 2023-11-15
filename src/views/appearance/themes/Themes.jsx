@@ -1,10 +1,6 @@
 import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import ThemesItem from "./ThemesItem";
 import { Link } from "react-scroll";
-import watermelonJoyTheme from "../../../assets/images/watermelon-joy2.png";
-import cyberDarkTheme from "../../../assets/images/cyber-dark2.png";
-import coolBreezeTheme from "../../../assets/images/cool-breeze-blue.png";
-import bubblegumTheme from "../../../assets/images/bubblegum.png";
 
 const Themes = ({ updateDesign }) => {
   return (
@@ -48,7 +44,6 @@ const Themes = ({ updateDesign }) => {
                     shadow: "",
                     shadowColor: "black",
                     buttonFontColor: "white",
-                    showLogo: true,
                     fontColor: "white",
                   })
                 }
@@ -59,8 +54,12 @@ const Themes = ({ updateDesign }) => {
             <Text>Custom</Text>
           </GridItem>
           <ThemesItem
+            bgColor="#1f795d"
+            variantColor="#bc4343"
+            shadow=""
+            shadowColor="#96ff84"
             description="Watermelon Joy"
-            imageSRC={watermelonJoyTheme}
+            shape="0px"
             onClick={() =>
               updateDesign({
                 bgColor: "#1f795d",
@@ -69,14 +68,17 @@ const Themes = ({ updateDesign }) => {
                 shadow: "",
                 shadowColor: "#353535",
                 buttonFontColor: "white",
-                showLogo: true,
                 fontColor: "white",
               })
             }
           />
           <ThemesItem
+            bgColor="black"
+            variantColor="black"
+            shadow="2px 2px 2px"
+            shadowColor="#96ff84"
             description="Cyber-Dark"
-            imageSRC={cyberDarkTheme}
+            shape="0px"
             onClick={() =>
               updateDesign({
                 bgColor: "black",
@@ -85,30 +87,36 @@ const Themes = ({ updateDesign }) => {
                 shadow: "5px 5px 5px",
                 shadowColor: "#96ff84",
                 buttonFontColor: "#96ff84",
-                showLogo: false,
                 fontColor: "#96ff84",
               })
             }
           />
           <ThemesItem
+            bgColor="#35bbbe"
+            variantColor="#35bbbe"
+            shadow="2px 2px 2px"
+            shadowColor="black"
             description="Cool Breeze Blue"
-            imageSRC={coolBreezeTheme}
+            shape="5px"
             onClick={() =>
               updateDesign({
                 bgColor: "#35bbbe",
                 shape: "10px",
                 variantColor: "#35bbbe",
-                shadow: "0px 2px 2px",
+                shadow: "2px 3px 3px",
                 shadowColor: "black",
                 buttonFontColor: "white",
-                showLogo: true,
                 fontColor: "white",
               })
             }
           />
           <ThemesItem
+            bgColor="#df8585"
+            variantColor="#33d2a7"
+            shadow="5px 5px 5px"
+            shadowColor="black"
             description="Bubblegum"
-            imageSRC={bubblegumTheme}
+            shape="5px"
             onClick={() =>
               updateDesign({
                 bgColor: "#df8585",
@@ -117,7 +125,25 @@ const Themes = ({ updateDesign }) => {
                 shadow: "5px 5px 5px",
                 shadowColor: "black",
                 buttonFontColor: "white",
-                showLogo: true,
+                fontColor: "white",
+              })
+            }
+          />
+          <ThemesItem
+            bgColor="#FFDB58"
+            variantColor="#0093ff"
+            shadow="5px 5px 5px"
+            shadowColor="black"
+            description="Spongebob"
+            shape=""
+            onClick={() =>
+              updateDesign({
+                bgColor: "#FFDB58",
+                shape: "10px",
+                variantColor: "#0093ff",
+                shadow: "5px 5px 5px",
+                shadowColor: "black",
+                buttonFontColor: "white",
                 fontColor: "white",
               })
             }
