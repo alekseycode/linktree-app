@@ -49,6 +49,7 @@ const Themes = ({ updateDesign }) => {
                     shadowColor: "black",
                     buttonFontColor: "white",
                     showLogo: true,
+                    fontColor: "white",
                   })
                 }
               >
@@ -69,6 +70,7 @@ const Themes = ({ updateDesign }) => {
                 shadowColor: "#353535",
                 buttonFontColor: "white",
                 showLogo: true,
+                fontColor: "white",
               })
             }
           />
@@ -84,6 +86,7 @@ const Themes = ({ updateDesign }) => {
                 shadowColor: "#96ff84",
                 buttonFontColor: "#96ff84",
                 showLogo: false,
+                fontColor: "#96ff84",
               })
             }
           />
@@ -99,6 +102,7 @@ const Themes = ({ updateDesign }) => {
                 shadowColor: "black",
                 buttonFontColor: "white",
                 showLogo: true,
+                fontColor: "white",
               })
             }
           />
@@ -114,6 +118,7 @@ const Themes = ({ updateDesign }) => {
                 shadowColor: "black",
                 buttonFontColor: "white",
                 showLogo: true,
+                fontColor: "white",
               })
             }
           />
