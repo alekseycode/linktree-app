@@ -1,20 +1,60 @@
-import { Flex, GridItem, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
-const ThemesItem = ({ description, imageSRC, onClick }) => {
+const ThemesItem = ({
+  bgColor,
+  variantColor,
+  shadow,
+  shadowColor,
+  description,
+  onClick,
+  shape,
+}) => {
   return (
-    <GridItem flexDir="column" alignItems="center" onClick={onClick}>
-      <Flex h="200px" w="128px" mb="10px" cursor="pointer">
-        <Image
-          w="200px"
-          borderRadius="10px"
-          src={imageSRC}
-          name="backgroundTheme"
-        />
+    <Flex
+      flexDir="column"
+      alignItems="center"
+      w="95%"
+      onClick={onClick}
+      cursor="pointer"
+      textAlign="center"
+    >
+      <Flex
+        flexDir="column"
+        alignItems="center"
+        justifyContent="center"
+        h="200px"
+        w="full"
+        borderRadius="15px"
+        bg={bgColor}
+        mb="10px"
+      >
+        <Box
+          w="80%"
+          h="8%"
+          mb="5px"
+          bg={variantColor}
+          boxShadow={shadow + " " + shadowColor}
+          borderRadius={shape}
+        ></Box>
+        <Box
+          w="80%"
+          h="8%"
+          mb="5px"
+          bg={variantColor}
+          boxShadow={shadow + " " + shadowColor}
+          borderRadius={shape}
+        ></Box>
+        <Box
+          w="80%"
+          h="8%"
+          mb="5px"
+          bg={variantColor}
+          boxShadow={shadow + " " + shadowColor}
+          borderRadius={shape}
+        ></Box>
       </Flex>
-      <Text w="128px" textAlign="center">
-        {description}
-      </Text>
-    </GridItem>
+      <Text>{description}</Text>
+    </Flex>
   );
 };
 
