@@ -1,4 +1,5 @@
 import { Avatar, Button, Flex, Image, Text } from "@chakra-ui/react";
+import linkTreeLogo from "../../assets/images/linktree-logo.svg";
 
 function Home() {
   return (
@@ -39,12 +40,7 @@ function Home() {
         <Button w="90%" mb="20px">
           Instagram
         </Button>
-        <Image
-          w="30%"
-          src="https://mfe-appearance.production.linktr.ee/images/logo.d1802ab494e6744207e6.svg"
-          mx="auto"
-          my="15%"
-        />
+        <Image w="30%" src={linkTreeLogo} mx="auto" my="15%" />
       </Flex>
     </Flex>
   );
