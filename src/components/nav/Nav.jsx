@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import NavItem from "./NavItem";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -35,7 +36,7 @@ const Nav = () => {
         }}
         mr="20px"
       >
-        <>More</>
+        <Link to="signin">Sign In</Link>
       </Box>
     </Flex>
   );

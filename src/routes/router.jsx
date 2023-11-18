@@ -6,6 +6,7 @@ import Links from "../views/links/Links";
 import Appearance from "../views/appearance/Appearance";
 import Settings from "../views/settings/Settings";
 import Analytics from "../views/analytics/Analytics";
+import SignIn from "../components/auth/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "analytics",
         element: <Analytics />,
+      },
+      {
+        path: "signin",
+        element: <SignIn />,
       },
     ],
   },
