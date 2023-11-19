@@ -21,7 +21,7 @@ Before you get started with the Linkfree App, make sure you have the following i
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/linktree-app.git
+git clone https://github.com/alekseycode/linktree-app.git
 ```
 
 2. Navigate to the project directory:
