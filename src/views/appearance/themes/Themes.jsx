@@ -11,7 +11,7 @@ const Themes = ({ updateDesign }) => {
       <Flex flexDir="column" bg="gray.700" borderRadius="30px">
         <Grid
           templateColumns="repeat(4, 1fr)"
-          gap={4}
+          gap={2}
           my="6%"
           mx="2%"
           justifyItems="center"
