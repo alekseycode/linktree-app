@@ -8,12 +8,13 @@ const SignIn = () => {
         flexDir="column"
         alignItems="center"
         bg="gray.700"
-        borderRadius="10px"
+        borderRadius="15px"
         h="300px"
         w="300px"
       >
         <Text my="20px">Sign In</Text>
-        <Flex>
+        <Flex flexDir="column">
+          <Input />
           <Input />
         </Flex>
       </Flex>
