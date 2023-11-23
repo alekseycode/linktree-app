@@ -7,6 +7,7 @@ import Appearance from "../views/appearance/Appearance";
 import Settings from "../views/settings/Settings";
 import Analytics from "../views/analytics/Analytics";
 import SignIn from "../components/auth/SignIn";
+import Register from "../components/auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "signin",
         element: <SignIn />,
+      },
+      {
+        path: "register",
+        element: <Register />,
       },
     ],
   },

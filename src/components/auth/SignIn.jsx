@@ -44,7 +44,9 @@ const SignIn = () => {
           />
           <Flex justifyContent="space-evenly" alignItems="center" mt="30px">
             <Link color="lightblue">Forgot Password</Link>
-            <Link color="lightblue">Register</Link>
+            <Link color="lightblue" href="register">
+              Register
+            </Link>
             <Button color="lightblue" w="80px" onClick={() => signIn()}>
               Sign In
             </Button>
