@@ -1,17 +1,17 @@
 import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { auth } from "../../auth/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-const SignIn = () => {
+const Register = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleFormChange = (prop, val) => {
     setFormData((prev) => ({ ...prev, [prop]: val }));
   };
 
-  const signIn = () => {
-    signInWithEmailAndPassword(auth, formData.email, formData.password)
+  const register = () => {
+    createUserWithEmailAndPassword(auth, formData.email, formData.password)
       .then((userCredential) => {
         console.log(userCredential);
       })
@@ -42,13 +42,9 @@ const SignIn = () => {
             type="password"
             onChange={(e) => handleFormChange("password", e.target.value)}
           />
-          <Flex justifyContent="space-evenly" alignItems="center" mt="30px">
-            <Link color="lightblue">Forgot Password</Link>
-            <Link color="lightblue" href="register">
+          <Flex alignItems="center" mt="30px">
+            <Button color="lightblue" w="80px" onClick={() => register()}>
               Register
-            </Link>
-            <Button color="lightblue" w="80px" onClick={() => signIn()}>
-              Sign In
             </Button>
           </Flex>
         </Flex>
@@ -57,4 +53,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Register;
