@@ -1,6 +1,6 @@
 import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { auth } from "../../auth/firebase";
+import { auth } from "../../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 const SignIn = () => {

@@ -1,6 +1,6 @@
 import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { auth } from "../../auth/firebase";
+import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
@@ -42,6 +42,7 @@ const Register = () => {
             type="password"
             onChange={(e) => handleFormChange("password", e.target.value)}
           />
+
           <Flex alignItems="center" mt="30px">
             <Button color="lightblue" w="80px" onClick={() => register()}>
               Register
