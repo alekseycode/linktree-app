@@ -3,7 +3,7 @@ import { useState } from "react";
 import AddLink from "./components/AddLink";
 import LinkItem from "./components/items/LinkItem";
 import LinktreeURL from "./components/LinktreeURL";
-import { useQueryClient } from "react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { DESIGN } from "../../constants/queryKeys";
 import useDesign from "../../hooks/useDesign";
 

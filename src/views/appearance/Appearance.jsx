@@ -20,7 +20,7 @@ import HideLogo from "./logo/HideLogo";
 import CustomAppearance from "./custom/CustomAppearance";
 import useDesign from "../../hooks/useDesign";
 import { DESIGN } from "../../constants/queryKeys";
-import { useQueryClient } from "react-query";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Appearance = () => {
   const queryClient = useQueryClient();
