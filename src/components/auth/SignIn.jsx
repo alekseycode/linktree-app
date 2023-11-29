@@ -1,19 +1,34 @@
-import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { auth } from "../../config/firebase";
+import { useNavigate } from "react-router-dom";
+import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useQueryClient } from "@tanstack/react-query";
+import { auth } from "../../config/firebase";
+import { USER } from "../../constants/queryKeys";
+import { GUEST_USER } from "../../constants/constants";
 
 const SignIn = () => {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleFormChange = (prop, val) => {
     setFormData((prev) => ({ ...prev, [prop]: val }));
   };
 
+  const setUserQueryCache = (user) => {
+    queryClient.setQueryData([USER], {
+      email: user.email,
+      id: user.uid,
+      isLoggedIn: !!user,
+    });
+    navigate("/admin/preview/links");
+  };
+
   const signIn = () => {
     signInWithEmailAndPassword(auth, formData.email, formData.password)
-      .then((userCredential) => {
-        console.log(userCredential);
+      .then(({ user }) => {
+        setUserQueryCache(user);
       })
       .catch((err) => console.log(err));
   };
@@ -43,11 +58,22 @@ const SignIn = () => {
             onChange={(e) => handleFormChange("password", e.target.value)}
           />
           <Flex justifyContent="space-evenly" alignItems="center" mt="30px">
-            <Link color="lightblue">Forgot Password</Link>
+            <Link
+              color="lightblue"
+              onClick={() =>
+                setUserQueryCache({
+                  ...GUEST_USER,
+                  isLoggedIn: true,
+                  uid: GUEST_USER.id,
+                })
+              }
+            >
+              Continue as guest
+            </Link>
             <Link color="lightblue" href="register">
               Register
             </Link>
-            <Button color="lightblue" w="80px" onClick={() => signIn()}>
+            <Button color="lightblue" w="80px" onClick={signIn}>
               Sign In
             </Button>
           </Flex>

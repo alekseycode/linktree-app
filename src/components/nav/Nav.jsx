@@ -1,9 +1,10 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import NavItem from "./NavItem";
-import { Link } from "react-router-dom";
-import { signOut } from "firebase/auth";
+import signOut from "../../api/signOut";
 
-const Nav = ({ user }) => {
+const Nav = () => {
+  const navigate = useNavigate();
   return (
     <Flex
       justifyContent="space-between"
@@ -37,13 +38,7 @@ const Nav = ({ user }) => {
         }}
         mr="20px"
       >
-        {user ? (
-          <Link to="/" onClick={() => signOut()}>
-            Sign Out
-          </Link>
-        ) : (
-          <Link to="signin">Sign In</Link>
-        )}
+        <Text onClick={() => signOut(navigate)}>Sign Out</Text>
       </Box>
     </Flex>
   );

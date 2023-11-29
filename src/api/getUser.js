@@ -4,9 +4,13 @@ import { auth } from "../config/firebase";
 const getUser = () => {
   return new Promise((resolve) => {
     onAuthStateChanged(auth, (user) => {
-      resolve(user ? { email: user.email, id: user.uid } : {});
+      console.log("auth state change:", user);
+      resolve(
+        user
+          ? { email: user.email, id: user.uid, isLoggedIn: !!user }
+          : { isLoggedIn: false }
+      );
     });
   });
 };
-
 export default getUser;

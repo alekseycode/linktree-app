@@ -1,3 +1,5 @@
+import signOut from "../../api/signOut";
+
 const HomeNav = () => {
   return (
     <Flex
@@ -33,9 +35,7 @@ const HomeNav = () => {
         mr="20px"
       >
         {user ? (
-          <Link to="/" onClick={() => signOut()}>
-            Sign Out
-          </Link>
+          <Text onClick={signOut}>Sign Out</Text>
         ) : (
           <Link to="signin">Sign In</Link>
         )}

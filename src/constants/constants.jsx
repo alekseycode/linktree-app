@@ -16,3 +16,5 @@ export const SHADOW_COLOR = "black";
 
 export const FONT_COLOR = "white";
 export const FONT = "arial";
+
+export const GUEST_USER = { email: "brightonearly@gmail.com", id: "GUEST" };

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../RootLayout";
 import Home from "../views/home/Home";
 import Preview from "../components/preview/Preview";
@@ -9,6 +9,10 @@ import Analytics from "../views/analytics/Analytics";
 import SignIn from "../components/auth/SignIn";
 import Register from "../components/auth/Register";
 
+const Comp = () => <>asd</>;
+
+const RedirectToAdminHome = () => <Navigate to="preview/links" replace />;
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,13 +20,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/:username",
-    element: () => <>sometext</>,
+    element: <Comp />,
   },
-
   {
     path: "/admin",
     element: <RootLayout />,
     children: [
+      {
+        index: true,
+        element: <RedirectToAdminHome />,
+      },
       {
         path: "preview",
         element: <Preview />,
@@ -46,14 +53,18 @@ const router = createBrowserRouter([
         element: <Analytics />,
       },
       {
-        path: "signin",
-        element: <SignIn />,
-      },
-      {
-        path: "register",
-        element: <Register />,
+        path: "/admin/*",
+        element: <RedirectToAdminHome />,
       },
     ],
+  },
+  {
+    path: "signin",
+    element: <SignIn />,
+  },
+  {
+    path: "register",
+    element: <Register />,
   },
 ]);
 
