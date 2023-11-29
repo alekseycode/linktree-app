@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../RootLayout";
-import Home from "../views/user-page/Home";
+import Home from "../views/home/Home";
 import Preview from "../components/preview/Preview";
 import Links from "../views/links/Links";
 import Appearance from "../views/appearance/Appearance";
@@ -12,12 +12,17 @@ import Register from "../components/auth/Register";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/:username",
+    element: () => <>sometext</>,
+  },
+
+  {
+    path: "/admin",
     element: <RootLayout />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
       {
         path: "preview",
         element: <Preview />,

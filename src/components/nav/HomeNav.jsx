@@ -1,9 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
-import NavItem from "./NavItem";
-import { Link } from "react-router-dom";
-import { signOut } from "firebase/auth";
-
-const Nav = ({ user }) => {
+const HomeNav = () => {
   return (
     <Flex
       justifyContent="space-between"
@@ -49,4 +44,4 @@ const Nav = ({ user }) => {
   );
 };
 
-export default Nav;
+export default HomeNav;
