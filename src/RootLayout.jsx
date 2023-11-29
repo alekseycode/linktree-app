@@ -10,15 +10,15 @@ const RootLayout = () => {
   console.log(user);
   return (
     <>
-      {user.status === "pending" ? (
-        <Flex justifyContent="center" mt="20%">
-          <Loading />
-        </Flex>
-      ) : (
+      {user.status === "success" ? (
         <>
           <Nav user={user} />
           <Outlet />
         </>
+      ) : (
+        <Flex justifyContent="center" mt="20%">
+          <Loading />
+        </Flex>
       )}
     </>
   );
