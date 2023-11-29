@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getDesign } from "../api/design";
 import { DESIGN } from "../constants/queryKeys";
 
@@ -6,14 +6,13 @@ import { DESIGN } from "../constants/queryKeys";
 Fetch the design data
 */
 const useDesign = (designId, config = {}) => {
-  const { data, ...rest } = useQuery(
-    [DESIGN, designId],
-    () => getDesign(designId),
-    {
-      staleTime: Infinity,
-      ...config,
-    }
-  );
+  const { data, ...rest } = useQuery({
+    queryKey: [DESIGN, designId],
+    queryFn: () => getDesign(designId),
+
+    staleTime: Infinity,
+    ...config,
+  });
 
   return {
     design: data,
