@@ -1,24 +1,40 @@
-import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
+import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { fixErrorMessage } from "./authFunctions";
 
 const Register = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    validatePassword: "",
+    error: "",
+  });
+  const [showError, setShowError] = useState(false);
 
   const handleFormChange = (prop, val) => {
     setFormData((prev) => ({ ...prev, [prop]: val }));
   };
 
   const register = () => {
-    createUserWithEmailAndPassword(auth, formData.email, formData.password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((err) => console.log(err));
+    if (formData.password === formData.validatePassword) {
+      createUserWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCredential) => {
+          console.log(userCredential);
+        })
+        .catch((err) => {
+          console.log(err);
+          handleFormChange("error", fixErrorMessage(err.code)),
+            setShowError(true);
+        });
+    } else {
+      handleFormChange("error", "Password fields do not match");
+      setShowError(true);
+    }
   };
   return (
-    <Flex mt="15%" justifyContent="center">
+    <Flex mt="15%" flexDir="column" alignItems="center">
       <Flex
         flexDir="column"
         alignItems="center"
@@ -40,16 +56,29 @@ const Register = () => {
           <Input
             name="passwordInput"
             type="password"
+            mb="10px"
             onChange={(e) => handleFormChange("password", e.target.value)}
           />
-
-          <Flex alignItems="center" mt="30px">
+          <Text mb="5px">Validate Password</Text>
+          <Input
+            name="validatePasswordInput"
+            type="password"
+            onChange={(e) =>
+              handleFormChange("validatePassword", e.target.value)
+            }
+          />
+          <Flex mt="30px" justifyContent="center">
             <Button color="lightblue" w="80px" onClick={() => register()}>
               Register
             </Button>
           </Flex>
         </Flex>
       </Flex>
+      {showError && (
+        <Text mt="20px" color="red.400">
+          {formData.error}
+        </Text>
+      )}
     </Flex>
   );
 };
