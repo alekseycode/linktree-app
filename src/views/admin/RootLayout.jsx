@@ -1,8 +1,8 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { Alert, AlertIcon, Center, Spinner, useToast } from "@chakra-ui/react";
-import Nav from "./components/nav/Nav";
-import useUser from "./hooks/useUser";
-import { GUEST_USER } from "./constants/constants";
+import Nav from "../../components/nav/Nav";
+import useUser from "../../hooks/useUser";
+import { GUEST_USER } from "../../constants/constants";
 
 const RootLayout = () => {
   const location = useLocation();

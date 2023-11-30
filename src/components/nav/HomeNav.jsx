@@ -1,4 +1,7 @@
+import { Box, Flex, Text } from "@chakra-ui/react";
+import NavItem from "./NavItem";
 import signOut from "../../api/signOut";
+import { Link } from "react-router-dom";
 
 const HomeNav = () => {
   return (
@@ -21,10 +24,10 @@ const HomeNav = () => {
       zIndex="1"
     >
       <Box display="flex" ml="20px">
-        <NavItem to="preview/links" label="Links" />
+        {/* <NavItem to="preview/links" label="Links" />
         <NavItem to="preview/appearance" label="Appearance" />
         <NavItem to="analytics" label="Analytics" />
-        <NavItem to="preview/settings" label="Settings" />
+        <NavItem to="preview/settings" label="Settings" /> */}
       </Box>
       <Box
         _hover={{
@@ -34,11 +37,7 @@ const HomeNav = () => {
         }}
         mr="20px"
       >
-        {user ? (
-          <Text onClick={signOut}>Sign Out</Text>
-        ) : (
-          <Link to="signin">Sign In</Link>
-        )}
+        <Link to="signin">Sign In</Link>
       </Box>
     </Flex>
   );
