@@ -1,9 +1,12 @@
+import { Box, Flex, Text } from "@chakra-ui/react";
+import NavItem from "./NavItem";
 import signOut from "../../api/signOut";
+import { Link } from "react-router-dom";
 
 const HomeNav = () => {
   return (
     <Flex
-      justifyContent="space-between"
+      justifyContent="space-around"
       mt="10px"
       bg="gray.700"
       borderRadius="30px"
@@ -21,25 +24,10 @@ const HomeNav = () => {
       zIndex="1"
     >
       <Box display="flex" ml="20px">
-        <NavItem to="preview/links" label="Links" />
-        <NavItem to="preview/appearance" label="Appearance" />
-        <NavItem to="analytics" label="Analytics" />
-        <NavItem to="preview/settings" label="Settings" />
+        <NavItem to="/" label="Home" />
       </Box>
-      <Box
-        _hover={{
-          color: "rgb(111, 111, 182)",
-          transition: "color 0.2s ease-out",
-          cursor: "pointer",
-        }}
-        mr="20px"
-      >
-        {user ? (
-          <Text onClick={signOut}>Sign Out</Text>
-        ) : (
-          <Link to="signin">Sign In</Link>
-        )}
-      </Box>
+
+      <NavItem to="signin" label="Sign In" />
     </Flex>
   );
 };
