@@ -1,16 +1,22 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Flex, Input, Link, Text } from "@chakra-ui/react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useQueryClient } from "@tanstack/react-query";
 import { auth } from "../../config/firebase";
 import { USER } from "../../constants/queryKeys";
 import { GUEST_USER } from "../../constants/constants";
+import { fixErrorMessage } from "./authFunctions";
 
 const SignIn = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    error: "",
+  });
+  const [showError, setShowError] = useState(false);
 
   const handleFormChange = (prop, val) => {
     setFormData((prev) => ({ ...prev, [prop]: val }));
@@ -30,10 +36,14 @@ const SignIn = () => {
       .then(({ user }) => {
         setUserQueryCache(user);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err),
+          handleFormChange("error", fixErrorMessage(err.code)),
+          setShowError(true);
+      });
   };
   return (
-    <Flex mt="15%" justifyContent="center">
+    <Flex mt="15%" flexDir="column" alignItems="center">
       <Flex
         flexDir="column"
         alignItems="center"
@@ -70,15 +80,20 @@ const SignIn = () => {
             >
               Continue as guest
             </Link>
-            <Link color="lightblue" href="register">
-              Register
-            </Link>
+            <Box color="lightblue" _hover={{ textDecor: "underline" }}>
+              <NavLink to="/register">Register</NavLink>
+            </Box>
             <Button color="lightblue" w="80px" onClick={signIn}>
               Sign In
             </Button>
           </Flex>
         </Flex>
       </Flex>
+      {showError && (
+        <Text mt="20px" color="red.400">
+          {formData.error}
+        </Text>
+      )}
     </Flex>
   );
 };
