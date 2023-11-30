@@ -1,9 +1,9 @@
 const DESIGN = {
   id: 1,
   name: "Personal Links",
-  title: "losh_cherns",
+  title: "rob_banks",
   desc: "by Aleksey C",
-  bio: "elite junior dev",
+  bio: "I don't rob banks.",
   imgURL: "https://bit.ly/dan-abramov",
   bgColor: "gray.800",
   font: "sans-serif",

@@ -24,7 +24,7 @@ function Home() {
           w="60px"
           h="60px"
         />
-        <Text>@robbanks</Text>
+        <Text>@rob_banks</Text>
         <Text mb="40px" mt="20px">
           I dont rob banks.
         </Text>

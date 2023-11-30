@@ -30,7 +30,7 @@ const RootLayout = () => {
               w="fit-content"
               borderRadius="10px"
               position="fixed"
-              top="20"
+              top="18px"
               left="0"
               right="0"
               mx="auto"
