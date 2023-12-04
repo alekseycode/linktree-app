@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { fixErrorMessage } from "./authFunctions";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,8 +23,8 @@ const Register = () => {
   const register = () => {
     if (formData.password === formData.validatePassword) {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
-        .then((userCredential) => {
-          console.log(userCredential);
+        .then(() => {
+          navigate("/signin");
         })
         .catch((err) => {
           console.log(err);
