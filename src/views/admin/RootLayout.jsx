@@ -1,5 +1,5 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { Alert, AlertIcon, Center, Spinner, useToast } from "@chakra-ui/react";
+import { Alert, AlertIcon, Center, Spinner } from "@chakra-ui/react";
 import Nav from "../../components/nav/Nav";
 import useUser from "../../hooks/useUser";
 import { GUEST_USER } from "../../constants/constants";
@@ -7,7 +7,6 @@ import { GUEST_USER } from "../../constants/constants";
 const RootLayout = () => {
   const location = useLocation();
   const { user, isPending, isSuccess, isError } = useUser();
-  console.log(user);
 
   if (isSuccess && !user.isLoggedIn) {
     return <Navigate to="/signin" state={{ from: location }} replace />;
