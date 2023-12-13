@@ -6,12 +6,13 @@ import LinktreeURL from "./components/LinktreeURL";
 import { useQueryClient } from "@tanstack/react-query";
 import { DESIGN } from "../../constants/queryKeys";
 import useDesign from "../../hooks/useDesign";
+import useUser from "../../hooks/useUser";
 
 const Links = () => {
   const queryClient = useQueryClient();
   const [showAddLink, setShowAddLink] = useState(false);
-
-  const { design } = useDesign(1);
+  const { user } = useUser();
+  const { design } = useDesign(user.activeDesignId);
   const { links = [] } = design || {};
 
   const createLinkItem = (link) => {

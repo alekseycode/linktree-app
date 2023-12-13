@@ -3,10 +3,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useQueryClient } from "@tanstack/react-query";
-import { auth } from "../../config/firebase";
-import { USER } from "../../constants/queryKeys";
+import db, { auth } from "../../config/firebase";
+import { DESIGN, DESIGNS, USER } from "../../constants/queryKeys";
 import { GUEST_USER } from "../../constants/constants";
 import { fixErrorMessage } from "./authFunctions";
+import { doc, getDoc } from "firebase/firestore";
 
 const SignIn = () => {
   const queryClient = useQueryClient();
@@ -25,16 +26,22 @@ const SignIn = () => {
   const setUserQueryCache = (user) => {
     queryClient.setQueryData([USER], {
       email: user.email,
-      id: user.uid,
+      id: user.userId,
       isLoggedIn: !!user,
+      activeDesignId: user.activeDesignId,
     });
-    navigate("/admin/preview/links");
   };
 
   const signIn = () => {
     signInWithEmailAndPassword(auth, formData.email, formData.password)
       .then(({ user }) => {
-        setUserQueryCache(user);
+        getDoc(doc(db, "users", user.uid)).then((docSnapshot) => {
+          const userData = docSnapshot.data();
+          setUserQueryCache(userData);
+        });
+      })
+      .then(() => {
+        navigate("/admin/preview/links");
       })
       .catch((err) => {
         console.log(err),

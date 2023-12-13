@@ -5,7 +5,7 @@ const NavItem = ({ to, label }) => {
   return (
     <Box
       _hover={{
-        color: "rgb(111, 111, 182)",
+        color: "white",
         transition: "color 0.2s ease-out",
       }}
       pr="30px"

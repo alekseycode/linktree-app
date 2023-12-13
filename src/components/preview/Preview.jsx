@@ -3,9 +3,11 @@ import { Outlet } from "react-router-dom";
 import useDesign from "../../hooks/useDesign";
 import PreviewLink from "./PreviewLink";
 import linkTreeLogo from "../../assets/images/linktree-logo.svg";
+import useUser from "../../hooks/useUser";
 
 const Preview = () => {
-  const { design } = useDesign(1);
+  const { user } = useUser();
+  const { design } = useDesign(user.activeDesignId);
   const {
     title,
     bio,
@@ -45,7 +47,7 @@ const Preview = () => {
           <Flex flexDir="column">
             <Flex flexDir="column">
               <Avatar
-                name="Rob Banks"
+                name="Avatar"
                 src={imgURL}
                 mt="20%"
                 mb="5%"
