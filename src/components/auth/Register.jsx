@@ -1,9 +1,10 @@
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { auth } from "../../config/firebase";
+import db, { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { fixErrorMessage } from "./authFunctions";
 import { useNavigate } from "react-router-dom";
+import { setDoc, doc } from "firebase/firestore";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -23,6 +24,18 @@ const Register = () => {
   const register = () => {
     if (formData.password === formData.validatePassword) {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          try {
+            setDoc(doc(db, "users", user.uid), {
+              email: formData.email,
+              designs: ["gMr1cOJq4I6uGW5keTnu"],
+              userID: user.uid,
+            });
+          } catch (err) {
+            console.log("Error adding a user to the db: " + err);
+          }
+        })
         .then(() => {
           navigate("/signin");
         })

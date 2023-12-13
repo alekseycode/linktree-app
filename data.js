@@ -12,7 +12,7 @@ const DESIGN = {
   shadow: "",
   fontColor: "white",
   shadowColor: "black",
-  public: true,
+  isPublic: true,
   buttonFontColor: "white",
   showLogo: true,
   links: [

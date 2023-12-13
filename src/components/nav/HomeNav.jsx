@@ -1,7 +1,5 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import NavItem from "./NavItem";
-import signOut from "../../api/signOut";
-import { Link } from "react-router-dom";
 
 const HomeNav = () => {
   return (

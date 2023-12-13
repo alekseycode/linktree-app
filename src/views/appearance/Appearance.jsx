@@ -21,10 +21,12 @@ import CustomAppearance from "./custom/CustomAppearance";
 import useDesign from "../../hooks/useDesign";
 import { DESIGN } from "../../constants/queryKeys";
 import { useQueryClient } from "@tanstack/react-query";
+import useUser from "../../hooks/useUser";
 
 const Appearance = () => {
   const queryClient = useQueryClient();
-  const { design } = useDesign(1);
+  const { user } = useUser();
+  const { design } = useDesign(user.activeDesignId);
   const { title, bio } = design || {};
 
   const [styles, setStyles] = useState({
