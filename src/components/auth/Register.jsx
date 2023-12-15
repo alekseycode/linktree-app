@@ -31,6 +31,7 @@ const Register = () => {
               email: formData.email,
               designs: ["gMr1cOJq4I6uGW5keTnu"],
               userID: user.uid,
+              activeDesignId: "gMr1cOJq4I6uGW5keTnu",
             });
           } catch (err) {
             console.log("Error adding a user to the db: " + err);
