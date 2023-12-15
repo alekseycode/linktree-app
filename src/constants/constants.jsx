@@ -19,6 +19,6 @@ export const FONT = "arial";
 
 export const GUEST_USER = {
   email: "robbanks@gmail.com",
-  id: "HeGpB89U1WgPN4xUvwyylpGjrQq1",
-  activeDesignId: "gMr1cOJq4I6uGW5keTnu",
+  id: "GUEST",
+  activeDesignId: "guestdesign",
 };

@@ -82,7 +82,6 @@ const SignIn = () => {
                   ...GUEST_USER,
                   isLoggedIn: true,
                   userId: GUEST_USER.id,
-                  activeDesignId: GUEST_USER.activeDesignId,
                 });
                 navigate("/admin/preview/links");
               }}

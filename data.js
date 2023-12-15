@@ -1,4 +1,4 @@
-const DESIGN = {
+const GUEST_DESIGN = {
   id: 1,
   name: "Personal Links",
   title: "rob_banks",
@@ -61,4 +61,4 @@ const DESIGN = {
   ],
 };
 
-export default DESIGN;
+export default GUEST_DESIGN;
