@@ -4,7 +4,8 @@ import db, { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { fixErrorMessage } from "./authFunctions";
 import { useNavigate } from "react-router-dom";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, addDoc, collection } from "firebase/firestore";
+import GUEST_DESIGN from "../../../data";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -26,30 +27,38 @@ const Register = () => {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
         .then((userCredential) => {
           const user = userCredential.user;
-          try {
-            setDoc(doc(db, "users", user.uid), {
-              email: formData.email,
-              designs: ["gMr1cOJq4I6uGW5keTnu"],
-              userID: user.uid,
-              activeDesignId: "gMr1cOJq4I6uGW5keTnu",
+
+          // Add the new design to the "designs" collection
+          return addDoc(collection(db, "designs"), GUEST_DESIGN)
+            .then((designRef) => {
+              // Set the activeDesignId on the user to the ID of the newly created design
+              return setDoc(doc(db, "users", user.uid), {
+                email: formData.email,
+                designs: [designRef.id], // Store the ID of the newly created design
+                userID: user.uid,
+                activeDesignId: designRef.id, // Set the activeDesignId to the ID of the design
+              });
+            })
+            .then(() => {
+              navigate("/signin");
+            })
+            .catch((err) => {
+              console.error("Error adding user or design:", err);
+              handleFormChange("error", fixErrorMessage(err.code));
+              setShowError(true);
             });
-          } catch (err) {
-            console.log("Error adding a user to the db: " + err);
-          }
-        })
-        .then(() => {
-          navigate("/signin");
         })
         .catch((err) => {
-          console.log(err);
-          handleFormChange("error", fixErrorMessage(err.code)),
-            setShowError(true);
+          console.error("Error creating user:", err);
+          handleFormChange("error", fixErrorMessage(err.code));
+          setShowError(true);
         });
     } else {
       handleFormChange("error", "Password fields do not match");
       setShowError(true);
     }
   };
+
   return (
     <Flex mt="15%" flexDir="column" alignItems="center">
       <Flex
