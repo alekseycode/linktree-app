@@ -77,13 +77,15 @@ const SignIn = () => {
           <Flex justifyContent="space-evenly" alignItems="center" mt="30px">
             <Link
               color="lightblue"
-              onClick={() =>
+              onClick={() => {
                 setUserQueryCache({
                   ...GUEST_USER,
                   isLoggedIn: true,
-                  uid: GUEST_USER.id,
-                })
-              }
+                  userId: GUEST_USER.id,
+                  activeDesignId: GUEST_USER.activeDesignId,
+                });
+                navigate("/admin/preview/links");
+              }}
             >
               Continue as guest
             </Link>
