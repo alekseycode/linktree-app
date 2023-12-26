@@ -21,12 +21,14 @@ import CustomAppearance from "./custom/CustomAppearance";
 import useDesign from "../../hooks/useDesign";
 import { DESIGN } from "../../constants/queryKeys";
 import { useQueryClient } from "@tanstack/react-query";
-import useUser from "../../hooks/useUser";
+import { useAtomValue } from "jotai";
+import { viewingDesignAtom } from "../../appState/appState";
 
 const Appearance = () => {
   const queryClient = useQueryClient();
-  const { user } = useUser();
-  const { design } = useDesign(user.activeDesignId);
+  const atomDesignId = useAtomValue(viewingDesignAtom);
+
+  const { design } = useDesign(atomDesignId);
   const { title, bio } = design || {};
 
   const [styles, setStyles] = useState({
@@ -49,7 +51,7 @@ const Appearance = () => {
   };
 
   const updateDesign = (design) => {
-    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+    queryClient.setQueryData([DESIGN, atomDesignId], (cache) => ({
       ...cache,
       ...design,
     }));

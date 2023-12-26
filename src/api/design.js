@@ -1,6 +1,6 @@
 import { doc, getDoc } from "firebase/firestore";
 import db from "../config/firebase";
-import DESIGN from "../../data";
+import DESIGN from "../assets/data";
 
 // export const getDesign = async () =>
 //   new Promise((resolve) => {

@@ -12,7 +12,7 @@ const getUser = () => {
           email: user.email,
           id: user.uid,
           isLoggedIn: !!user,
-          activeDesignId: userData.activeDesignId,
+          activeDesignId: userData?.activeDesignId,
         });
       });
     });

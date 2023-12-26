@@ -6,17 +6,19 @@ import LinktreeURL from "./components/LinktreeURL";
 import { useQueryClient } from "@tanstack/react-query";
 import { DESIGN } from "../../constants/queryKeys";
 import useDesign from "../../hooks/useDesign";
-import useUser from "../../hooks/useUser";
+import { useAtomValue } from "jotai";
+import { viewingDesignAtom } from "../../appState/appState";
 
 const Links = () => {
   const queryClient = useQueryClient();
+  const atomDesignId = useAtomValue(viewingDesignAtom);
   const [showAddLink, setShowAddLink] = useState(false);
-  const { user } = useUser();
-  const { design } = useDesign(user.activeDesignId);
+
+  const { design } = useDesign(atomDesignId);
   const { links = [] } = design || {};
 
   const createLinkItem = (link) => {
-    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+    queryClient.setQueryData([DESIGN, atomDesignId], (cache) => ({
       ...cache,
       links: [{ ...link }, ...cache.links],
     }));
@@ -24,7 +26,7 @@ const Links = () => {
 
   const deleteLinkItem = (id) => {
     const newLinksArr = links.filter((link) => link.id !== id);
-    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+    queryClient.setQueryData([DESIGN, atomDesignId], (cache) => ({
       ...cache,
       links: [...newLinksArr],
     }));
@@ -34,7 +36,7 @@ const Links = () => {
     const newLinksArr = links.map((link) =>
       link.id === id ? { ...link, [prop]: value } : link
     );
-    queryClient.setQueryData([DESIGN, 1], (cache) => ({
+    queryClient.setQueryData([DESIGN, atomDesignId], (cache) => ({
       ...cache,
       links: [...newLinksArr],
     }));

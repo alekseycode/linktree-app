@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getDesign } from "../api/design";
 import { GUEST_USER } from "../constants/constants";
-import GUEST_DESIGN from "../../data";
+import GUEST_DESIGN from "../assets/data";
 import { DESIGN } from "../constants/queryKeys";
 
 /*
