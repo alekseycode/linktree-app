@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { fixErrorMessage } from "./authFunctions";
 import { useNavigate } from "react-router-dom";
 import { setDoc, doc, addDoc, collection } from "firebase/firestore";
-import GUEST_DESIGN from "../../../data";
+import DEFAULT_DESIGN from "../../assets/defaultData";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -25,11 +25,14 @@ const Register = () => {
   const register = () => {
     if (formData.password === formData.validatePassword) {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
           const user = userCredential.user;
 
           // Add the new design to the "designs" collection
-          return addDoc(collection(db, "designs"), GUEST_DESIGN)
+          return addDoc(collection(db, "designs"), {
+            ...DEFAULT_DESIGN,
+            userID: user.uid,
+          })
             .then((designRef) => {
               // Set the activeDesignId on the user to the ID of the newly created design
               return setDoc(doc(db, "users", user.uid), {
