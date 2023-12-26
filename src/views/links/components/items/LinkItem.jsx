@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import InputItem from "./InputItem";
 import { useState } from "react";
 
-const LinkItem = ({ id, url, name, deleteLinkItem, updateLink }) => {
+const LinkItem = ({ id, url, name, deleteLinkItem, updateLink, active }) => {
   const [isActive, setIsActive] = useState(true);
 
   return (
@@ -33,7 +33,7 @@ const LinkItem = ({ id, url, name, deleteLinkItem, updateLink }) => {
           </Flex>
           <Switch
             name="showLink"
-            defaultChecked
+            isChecked={active}
             onChange={() => {
               updateLink(id, "active", !isActive);
               setIsActive((prev) => !prev);
